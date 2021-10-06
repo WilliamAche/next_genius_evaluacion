@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
    
 use Illuminate\Http\Request;
-use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\Hash;
+
 use App\Models\User;
+use App\Rules\MatchOldPassword;
+
+use RealRashid\SweetAlert\Facades\Alert;
   
 class ChangePasswordController extends Controller
 {
@@ -44,7 +47,8 @@ class ChangePasswordController extends Controller
    
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
 
-        return view('home');
+        alert()->success('Contraseña cambiada','Tu contraseña se a cambiado existosamente');
+        return view('home')->with('Toast Message', 'info');
    
     }
 }

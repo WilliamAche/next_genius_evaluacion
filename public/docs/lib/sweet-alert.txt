@@ -1,0 +1,31 @@
+Tipos de alertas
+
+Alert::success('Success Title', 'Success Message');
+
+Alert::info('Info Title', 'Info Message');
+
+Alert::warning('Warning Title', 'Warning Message');
+
+Alert::error('Error Title', 'Error Message');
+
+Alert::question('Question Title', 'Question Message');
+
+Alert::html('Html Title', 'Html Code', 'Type');
+
+Alert::toast('Toast Message', 'info');
+
+alert('Title','Lorem Lorem Lorem', 'success');
+
+alert()->success('Title','Lorem Lorem Lorem');
+
+alert()->info('Title','Lorem Lorem Lorem');
+
+alert()->warning('Title','Lorem Lorem Lorem');
+
+alert()->error('Title','Lorem Lorem Lorem');
+
+alert()->question('Title','Lorem Lorem Lorem');
+
+alert()->html('<i>HTML</i> <u>example</u>'," You can use <b>bold text</b>, <a href='//github.com'>links</a> and other HTML tags ",'success');
+
+DEMO: https://realrashid.github.io/sweet-alert/demo
