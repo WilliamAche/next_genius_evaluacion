@@ -20,7 +20,26 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('home', 'HomeController@index')->name('home');
+// Rutas para los usuarios logueados
+Route::group(['middleware' => ['auth']], function () {
 
-Route::get('change-password', 'ChangePasswordController@index');
-Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+    Route::get('home', 'HomeController@index')->name('home');
+
+    // Rutas para los usuarios sin rol
+    Route::group(['prefix' => 'profile'], function () {
+
+        Route::get('change-password', 'ChangePasswordController@index');
+        Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
+        
+    });
+
+
+    // Rutas para los usuarios con rol de administrador
+    Route::group(['middleware' => ['role:1']], function () {
+
+    });
+
+});
+
+// http paginas de error
+Route::get('403', 'HttpController@http403')->name('403');

@@ -1,0 +1,24 @@
+:root {
+    --gold: #C9983B;
+}
+
+.bg-gold {
+    background-color: var(--gold) !important;
+}
+
+.border-golden {
+    border-color: var(--gold) !important;
+    border-width: 3px;
+}
+
+.text-golden {
+    color: var(--gold);
+}
+
+.btn-golden {
+    background: rgb(254, 219, 55);
+    background: linear-gradient(90deg, rgba(254, 219, 55, 1) 0%, rgba(253, 185, 49, 1) 12%, rgba(175, 139, 50, 1) 28%, rgba(227, 160, 18, 1) 46%, rgba(254, 219, 55, 1) 67%,
+            rgba(227, 160, 18, 1) 90%);
+    border-color: var(--gold) !important;
+    border-width: 1px;
+}
