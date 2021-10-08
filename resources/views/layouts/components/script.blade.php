@@ -15,6 +15,7 @@
 <script src="{{ asset('js/template/scripts/components.js') }}"></script>
 
 <!-- BEGIN: Page JS-->
+{{-- <script src="{{ asset('js/template/scripts/pages/dashboard-ecommerce.js') }}"></script> --}}
 <script src="{{ asset('js/template/scripts/pages/dashboard-analytics.js') }}"></script>
 
 <!-- BEGIN: Custom JS-->

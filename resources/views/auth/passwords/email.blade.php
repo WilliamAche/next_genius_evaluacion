@@ -2,8 +2,8 @@
 
 @section('content')
 <section class="row flexbox-container">
-    <div class="col-xl-12 col-md-12 col-12 d-flex justify-content-center px-0">
-        <div class="card bg-authentication rounded-0 mb-0">
+    <div class="col-xl-7 col-md-9 col-10 d-flex justify-content-center px-0">
+    <div class="card bg-authentication rounded-0 mb-0">
             <div class="row m-0">
                 <div class="col-lg-6 d-lg-block d-none text-center align-self-center">
                     <img src="{{ asset('img/template/pages/forgot-password.png') }}" alt="branding logo">
@@ -35,7 +35,7 @@
                                         <label for="inputEmail">Email</label>
                                     </div>
                                 <div class="float-md-left d-block mb-1">
-                                    <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block px-75">Atrás para iniciar sesión</a>
+                                    <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block px-75">Entrar</a>
                                 </div>
                                 <div class="float-md-right d-block mb-1">
                                 <button type="submit" class="btn btn-primary btn-block px-75">Recuperar contraseña</button>

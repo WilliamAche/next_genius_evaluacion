@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="row flexbox-container">
-    <div class="col-xl-12 col-12 d-flex justify-content-center">
+        <div class="col-xl-7 col-10 d-flex justify-content-center">
         <div class="card bg-authentication rounded-0 mb-0 w-100">
             <div class="row m-0">
                 <div class="col-lg-6 d-lg-block d-none text-center align-self-center p-0">
@@ -49,7 +49,7 @@
                                     </fieldset>
                                     <div class="row pt-2">
                                         <div class="col-12 col-md-6 mb-1">
-                                            <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block px-0">Volver al inicio de sesión</a>
+                                            <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block px-0">Entrar</a>
                                         </div>
                                         <div class="col-12 col-md-6 mb-1">
                                             <button type="submit" class="btn btn-primary btn-block px-0">Restablecer la contraseña</button>

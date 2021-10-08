@@ -11,7 +11,8 @@ $(window).on("load", function () {
 
   var $primary = '#7367F0';
   var $danger = '#EA5455';
-  var $warning = '#FF9F43';
+  // var $warning = '#FF9F43';
+  var $warning = '#C9983B';
   var $info = '#0DCCE1';
   var $primary_light = '#8F80F9';
   var $warning_light = '#FFC085';
@@ -43,7 +44,7 @@ $(window).on("load", function () {
         }
       },
     },
-    colors: [$primary],
+    colors: [$warning],
     dataLabels: {
       enabled: false
     },
@@ -61,7 +62,7 @@ $(window).on("load", function () {
       }
     },
     series: [{
-      name: 'Subscribers',
+      name: 'Cursos Comprados',
       data: [28, 40, 36, 52, 38, 60, 55]
     }],
 
@@ -116,7 +117,7 @@ $(window).on("load", function () {
         }
       },
     },
-    colors: [$warning],
+    colors: [$danger],
     dataLabels: {
       enabled: false
     },

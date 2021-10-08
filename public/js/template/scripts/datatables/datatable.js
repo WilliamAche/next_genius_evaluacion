@@ -95,12 +95,14 @@ $(document).ready(function() {
         buttons: [
             {
                 extend: 'copyHtml5',
+                text: 'COPIAR',
                 exportOptions: {
                     columns: [ 0, ':visible' ]
                 }
             },
             {
                 extend: 'pdfHtml5',
+                text: 'PDF',
                 exportOptions: {
                     columns: ':visible'
                 }
@@ -118,6 +120,7 @@ $(document).ready(function() {
             },
             {
                 extend: 'print',
+                text: 'IMPRIMIR',
                 exportOptions: {
                     columns: ':visible'
                 }

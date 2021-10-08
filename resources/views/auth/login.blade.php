@@ -32,7 +32,6 @@
                                         </div>
                                         <label for="user-name">Email</label>
                                     </fieldset>
-
                                     <fieldset class="form-label-group position-relative has-icon-left">
                                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="user-password" placeholder="Contraseña" name="password" required autocomplete="current-password">
                                         @error('password')
@@ -74,9 +73,9 @@
                         </div>
                         <div class="login-footer">
                             <div class="divider">
-                                <div class="divider-text">O</div>
+                                <div class="divider-text">Iniciar sesión con</div>
                             </div>
-                            <div class="footer-btn d-inline">
+                            <div class="footer-btn d-inline d-flex justify-content-center">
                                 <a href="#" class="btn btn-facebook"><span class="fa fa-facebook"></span></a>
                                 <a href="#" class="btn btn-twitter white"><span class="fa fa-twitter"></span></a>
                                 <a href="#" class="btn btn-google"><span class="fa fa-google"></span></a>

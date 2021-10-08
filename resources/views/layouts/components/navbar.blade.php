@@ -17,7 +17,7 @@
                                      class="ficon feather icon-menu"></i></a></li>
                      </ul>
 
-                     <ul class="nav navbar-nav bookmark-icons">
+                     {{-- <ul class="nav navbar-nav bookmark-icons">
                          <li class="nav-item d-none d-lg-block"><a class="nav-link" href="#" data-toggle="tooltip"
                                  data-placement="top" title="To-do"><i class="ficon feather icon-check-square"></i></a>
                          </li>
@@ -29,9 +29,9 @@
                          <li class="nav-item d-none d-lg-block"><a class="nav-link" href="#" data-toggle="tooltip"
                                  data-placement="top" title="Calendario"><i class="ficon feather icon-calendar"></i></a>
                          </li>
-                     </ul>
+                     </ul> --}}
 
-                     <ul class="nav navbar-nav">
+                     {{-- <ul class="nav navbar-nav">
                          <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i
                                      class="ficon feather icon-star warning"></i></a>
                              <div class="bookmark-input search-input">
@@ -41,7 +41,7 @@
                                  <ul class="search-list search-list-bookmark"></ul>
                              </div>
                          </li>
-                     </ul>
+                     </ul> --}}
 
                  </div>
                  <ul class="nav navbar-nav float-right">
@@ -49,17 +49,18 @@
                              id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true"
                              aria-expanded="false"><i class="flag-icon flag-icon-es"></i><span
                                  class="selected-language">Español</span></a>
-                         <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item" href="#"
-                                 data-language="en"><i class="flag-icon flag-icon-us"></i>Ingles</a><a
-                                 class="dropdown-item" href="#" data-language="fr"><i
-                                     class="flag-icon flag-icon-fr"></i>Frances</a><a class="dropdown-item" href="#"
-                                 data-language="de"><i class="flag-icon flag-icon-de"></i>Aleman</a><a
-                                 class="dropdown-item" href="#" data-language="pt"><i
-                                     class="flag-icon flag-icon-pt"></i>Portugues</a></div>
+                         <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                                 <a class="dropdown-item" href="#"data-language="en"><i class="flag-icon flag-icon-us"></i>Ingles</a>
+                                 {{-- <a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i>Frances</a>
+                                 <a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i>Aleman</a>
+                                 <a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i>Portugues</a> --}}
+                                </div>
                      </li>
-                     <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i
-                                 class="ficon feather icon-maximize"></i></a></li>
-                     <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i
+                     {{-- <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i
+                                 class="ficon feather icon-maximize"></i></a></li> --}}
+
+
+                     {{-- <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i
                                  class="ficon feather icon-search"></i></a>
                          <div class="search-input">
                              <div class="search-input-icon"><i class="feather icon-search primary"></i></div>
@@ -68,7 +69,7 @@
                              <div class="search-input-close"><i class="feather icon-x"></i></div>
                              <ul class="search-list search-list-main"></ul>
                          </div>
-                     </li>
+                     </li> --}}
 
                      <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
                              data-toggle="dropdown"><i class="ficon feather icon-bell"></i><span
@@ -165,9 +166,9 @@
                          <div class="dropdown-menu dropdown-menu-right">
                              <a class="dropdown-item" href="{{ route('profile') }}"><i class="feather icon-user"></i>
                                  Perfil</a>
-                             <a class="dropdown-item" href="#"><i class="feather icon-mail"></i> Mi correo</a>
+                             {{-- <a class="dropdown-item" href="#"><i class="feather icon-mail"></i> Mi correo</a>
                              <a class="dropdown-item" href="#"><i class="feather icon-check-square"></i> Tareas</a>
-                             <a class="dropdown-item" href="#"><i class="feather icon-message-square"></i> Chats</a>
+                             <a class="dropdown-item" href="#"><i class="feather icon-message-square"></i> Chats</a> --}}
                              <div class="dropdown-divider"></div>
                              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();"><i class="feather icon-power"></i>
