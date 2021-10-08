@@ -22,23 +22,28 @@ Auth::routes();
 
 // Rutas para los usuarios logueados
 Route::group(['middleware' => ['auth']], function () {
+Route::get('home', 'HomeController@index')->name('home');
 
-    Route::get('home', 'HomeController@index')->name('home');
+    Route::group(['prefix' => 'auth'], function () {
 
-    // Rutas para los usuarios sin rol
-    Route::group(['prefix' => 'profile'], function () {
 
-        Route::get('change-password', 'ChangePasswordController@index');
-        Route::post('change-password', 'ChangePasswordController@store')->name('change.password');
-        
+        // Rutas para los usuarios sin rol
+        Route::group(['prefix' => 'profile'], function () {
+
+            Route::get('/', 'ProfileController@profile')->name('profile');
+            Route::patch('profile-update', 'ProfileController@update')->name('profile.update');
+
+            Route::get('change-password', 'ProfileController@changePassword');
+            Route::post('change-password', 'ProfileController@store')->name('change.password');
+
+        });
+
+        // Rutas para los usuarios con rol de administrador
+        Route::group(['middleware' => ['role:1']], function () {
+
+        });
+
     });
-
-
-    // Rutas para los usuarios con rol de administrador
-    Route::group(['middleware' => ['role:1']], function () {
-
-    });
-
 });
 
 // http paginas de error

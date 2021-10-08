@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = 'users';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,6 +24,10 @@ class User extends Authenticatable
         'email',
         'password',
         'admin',
+        'photo',
+        'banner',
+        'status',
+
     ];
 
     /**
@@ -42,4 +48,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relacion con la billetera
+     *
+     * @return void
+     */
+    public function getWallet()
+    {
+        return $this->hasMany('App\Models\Wallet', 'iduser');
+    }
 }
