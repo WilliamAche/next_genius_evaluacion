@@ -1,8 +1,7 @@
-<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-12">
             <div class="card">
-                <div class="card-header">Cambiar contraseña</div>
+                <div class="card-header d-flex justify-content-center"><h4>Cambiar contraseña</h4></div>
    
                 <div class="card-body">
                     <form method="POST" action="{{ route('change.password') }}">
@@ -48,4 +47,3 @@
             </div>
         </div>
     </div>
-</div>

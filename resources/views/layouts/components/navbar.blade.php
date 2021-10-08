@@ -17,7 +17,7 @@
                                      class="ficon feather icon-menu"></i></a></li>
                      </ul>
 
-                     {{-- <ul class="nav navbar-nav bookmark-icons">
+                     <ul class="nav navbar-nav bookmark-icons">
                          <li class="nav-item d-none d-lg-block"><a class="nav-link" href="#" data-toggle="tooltip"
                                  data-placement="top" title="To-do"><i class="ficon feather icon-check-square"></i></a>
                          </li>
@@ -29,9 +29,9 @@
                          <li class="nav-item d-none d-lg-block"><a class="nav-link" href="#" data-toggle="tooltip"
                                  data-placement="top" title="Calendario"><i class="ficon feather icon-calendar"></i></a>
                          </li>
-                     </ul> --}}
+                     </ul>
 
-                     {{-- <ul class="nav navbar-nav">
+                     <ul class="nav navbar-nav">
                          <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i
                                      class="ficon feather icon-star warning"></i></a>
                              <div class="bookmark-input search-input">
@@ -41,26 +41,26 @@
                                  <ul class="search-list search-list-bookmark"></ul>
                              </div>
                          </li>
-                     </ul> --}}
+                     </ul>
 
                  </div>
                  <ul class="nav navbar-nav float-right">
-                     <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link"
+                     {{-- <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link"
                              id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true"
                              aria-expanded="false"><i class="flag-icon flag-icon-es"></i><span
                                  class="selected-language">Español</span></a>
                          <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                                  <a class="dropdown-item" href="#"data-language="en"><i class="flag-icon flag-icon-us"></i>Ingles</a>
-                                 {{-- <a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i>Frances</a>
+                                 <a class="dropdown-item" href="#" data-language="fr"><i class="flag-icon flag-icon-fr"></i>Frances</a>
                                  <a class="dropdown-item" href="#" data-language="de"><i class="flag-icon flag-icon-de"></i>Aleman</a>
-                                 <a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i>Portugues</a> --}}
+                                 <a class="dropdown-item" href="#" data-language="pt"><i class="flag-icon flag-icon-pt"></i>Portugues</a>
                                 </div>
-                     </li>
+                     </li> --}}
                      {{-- <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-expand"><i
                                  class="ficon feather icon-maximize"></i></a></li> --}}
 
 
-                     {{-- <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i
+                     <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i
                                  class="ficon feather icon-search"></i></a>
                          <div class="search-input">
                              <div class="search-input-icon"><i class="feather icon-search primary"></i></div>
@@ -69,7 +69,7 @@
                              <div class="search-input-close"><i class="feather icon-x"></i></div>
                              <ul class="search-list search-list-main"></ul>
                          </div>
-                     </li> --}}
+                     </li>
 
                      <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="#"
                              data-toggle="dropdown"><i class="ficon feather icon-bell"></i><span
@@ -148,19 +148,30 @@
                              href="#" data-toggle="dropdown">
                              <div class="user-nav d-sm-flex d-none"><span
                                      class="user-name text-bold-600">{{ Auth::user()->name }}</span>
-                                 @if (Auth::user()->status == 0)
+                                 {{-- @if (Auth::user()->status == 0)
                                  <span class="user-status"><i
                                          class="fa fa-circle font-small-3 text-danger"></i>Inactivo</span>
                                  @else
                                  <span class="user-status"><i
                                          class="fa fa-circle font-small-3 text-success"></i>Activo</span>
-                                 @endif
+                                 @endif --}}
+                                 <span class="user-status"><i
+                                    class="fa fa-circle font-small-3 text-success"></i>Activo</span>
                              </div>
+                             @if (Auth::user()->photo == NULL)
                              <span>
-                                 <img class="round"
-                                     src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"
-                                     alt="avatar" height="40" width="40">
-                             </span>
+                                <img class="round"
+                                    src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"
+                                    alt="avatar" height="40" width="40">
+                            </span>
+                             @else
+                             <span>
+                                <img class="round"
+                                    src="{{ asset('storage/photo-profile/'.Auth::user()->photo) }}"
+                                    alt="avatar" height="40" width="40">
+                            </span>
+                             @endif
+                     
                          </a>
 
                          <div class="dropdown-menu dropdown-menu-right">

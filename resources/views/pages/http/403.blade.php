@@ -1,51 +1,84 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html class="loading" lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-textdirection="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
     <title>Next Genius - 403</title>
-    {{-- css --}}
-    <link rel="stylesheet" href="{{ asset('css/http/403.css') }}">
+
+    <link rel="shortcut icon" href="{{ asset('img/next-genius/icon.jpg') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" href="{{ asset('vendor/css/vendors.min.css') }}">
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" href="{{ asset('css/template/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/template/bootstrap-extended.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/template/colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/template/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/template/themes/dark-layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/template/themes/semi-dark-layout.css') }}">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" href="{{ asset('css/template/core/menu/menu-types/vertical-menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/template/core/colors/palette-gradient.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/template/pages/coming-soon.css') }}">
+
 </head>
 
-<body>
-    <div class="row">
-        <div class="col-12">
-            {{-- imagen --}}
-            <svg xmlns="http://www.w3.org/2000/svg" id="robot-error" viewBox="0 0 260 118.9">
-                <defs>
-                    <clipPath id="white-clip">
-                        <circle id="white-eye" fill="#cacaca" cx="130" cy="65" r="20" />
-                    </clipPath>
-                    <text id="text-s" class="error-text" y="106"> 403 </text>
-                </defs>
-                <path class="alarm" fill="#e62326" d="M120.9 19.6V9.1c0-5 4.1-9.1 9.1-9.1h0c5 0 9.1 4.1 9.1 9.1v10.6" />
-                <use xlink:href="#text-s" x="-0.5px" y="-1px" fill="black"></use>
-                <use xlink:href="#text-s" fill="#2b2b2b"></use>
-                <g id="robot">
-                    <g id="eye-wrap">
-                        <use xlink:href="#white-eye"></use>
-                        <circle id="eyef" class="eye" clip-path="url(#white-clip)" fill="#000" stroke="#C9983B"
-                            stroke-width="2" stroke-miterlimit="10" cx="130" cy="65" r="11" />
-                        <ellipse id="white-eye" fill="#2b2b2b" cx="130" cy="40" rx="18" ry="12" />
-                    </g>
-                    <circle class="lightblue" cx="105" cy="32" r="2.5" id="tornillo" />
-                    <use xlink:href="#tornillo" x="50"></use>
-                    <use xlink:href="#tornillo" x="50" y="60"></use>
-                    <use xlink:href="#tornillo" y="60"></use>
-                </g>
-            </svg>
-        </div>
-        <div class="col-12">
+<body class="horizontal-layout horizontal-menu dark-layout 1-column  navbar-floating footer-static bg-full-screen-image  blank-page blank-page" data-open="hover" data-menu="horizontal-menu" data-col="1-column" data-layout="dark-layout">
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- maintenance -->
+                <section class="row flexbox-container">
+                    <div class="col-xl-7 col-md-8 col-12 d-flex justify-content-center">
+                        <div class="card auth-card bg-transparent shadow-none rounded-0 mb-0 w-100">
+                            <div class="card-content">
+                                <div class="card-body text-center">
+                                    <img src="{{ asset('img/template/pages/not-authorized.png') }}" class="img-fluid align-self-center" alt="branding logo">
+                                    <h1 class="font-large-2 my-2">No estas autorizado</h1>
+                                    <p class="p-2 text-white">
+                                    Lo sentimos, parece que no tiene permiso para acceder a esta sección de la web, por favor, diríjase al inicio 
+                                    </p>
+                                    <a class="btn btn-primary btn-lg mt-2" href="{{ route('home') }}">Volver al Inicio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- maintenance end -->
 
-            <h1>No se le permite entrar aquí</h1>
-            <h2>Ir a<a href="{{ route('home') }}"> Inicio</a></h2>
+            </div>
         </div>
     </div>
-    {{-- script --}}
-    <script src="{{ asset('js/pages/http/403.js') }}"></script>
+    
+    <!-- BEGIN: Vendor JS-->
+    <script src="{{ asset('vendor/js/vendors.min.js') }}"></script>
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{ asset('vendor/js/coming-soon/jquery.countdown.min.js') }}"></script>
+
+    <!-- BEGIN: Theme JS-->
+    <script src="{{ asset('js/template/core/app-menu.js') }}"></script>
+    <script src="{{ asset('js/template/core/app.js') }}"></script>
+    <script src="{{ asset('js/template/scripts/components.js') }}"></script>
+
+    <!-- BEGIN: Page JS-->
+    <script src="{{ asset('js/template/scripts/pages/coming-soon.js') }}"></script>
+
 </body>
 
 </html>

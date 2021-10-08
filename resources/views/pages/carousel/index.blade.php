@@ -3,7 +3,7 @@
     <div class="col-md-6 col-sm-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Optional captions</h4>
+                <h4 class="card-title">Cursos Obtenidos</h4>
             </div>
             <div class="card-content">
                 <div class="card-body">

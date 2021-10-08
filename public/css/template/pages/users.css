@@ -9,8 +9,8 @@
 }
 #user-profile .profile-img-container img {
   border : 0.3rem solid #FFFFFF;
-  height : 85px;
-  width : 85px;
+  height : 120px;
+  width :  120px;
 }
 
 #user-profile #profile-info .card-header i {
