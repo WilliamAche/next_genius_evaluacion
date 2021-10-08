@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-
-<script src="{{ asset('js/libs/jquery/3.6.0/jquery-3.6.0.min.js') }}"></script>
+@push('js')
 <script>
 
     $(document).ready(function() {
@@ -34,19 +33,13 @@
     
       }
     </script>
+@endpush
 
 @section('content')
 <div class="container">
     <form action="{{ route('profile.update',$user->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
-
-
-
-
-
-
-
 
         <div class="media">
             <div class="custom-file">
@@ -87,24 +80,6 @@
             </div>
             <div class="col"></div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <div class="row">
             <div class="col-12">
