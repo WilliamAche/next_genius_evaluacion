@@ -48,7 +48,7 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title text-text-bold-600" id="cal-modal">Add Event</h4>
+                    <h4 class="modal-title text-text-bold-600" id="cal-modal">Añadir nuevo evento</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -64,7 +64,7 @@
                                         <span class="bullet bullet-success bullet-sm mr-25"></span>
                                         Clases
                                     </span>
-                                    <span class="dropdown-item work" data-color="warning">
+                                    <span class="dropdown-item work" data-color="info">
                                         <span class="bullet bullet-info bullet-sm mr-25"></span>
                                         Trabajos
                                     </span>
@@ -80,31 +80,31 @@
                             </div>
                         </div>
                         <fieldset class="form-label-group">
-                            <input type="text" class="form-control" id="cal-event-title" placeholder="Event Title">
-                            <label for="cal-event-title">Event Title</label>
+                            <input type="text" class="form-control" id="cal-event-title" placeholder="Titulo">
+                            <label for="cal-event-title">Titulo</label>
                         </fieldset>
                         <fieldset class="form-label-group">
                             <input type="text" class="form-control pickadate" id="cal-start-date"
-                                placeholder="Start Date">
-                            <label for="cal-start-date">Start Date</label>
+                                placeholder="Fecha de inicio">
+                            <label for="cal-start-date">Fecha de inicio</label>
                         </fieldset>
                         <fieldset class="form-label-group">
-                            <input type="text" class="form-control pickadate" id="cal-end-date" placeholder="End Date">
-                            <label for="cal-end-date">End Date</label>
+                            <input type="text" class="form-control pickadate" id="cal-end-date" placeholder="Fecha final">
+                            <label for="cal-end-date">Fecha final</label>
                         </fieldset>
                         <fieldset class="form-label-group">
                             <textarea class="form-control" id="cal-description" rows="5"
-                                placeholder="Description"></textarea>
-                            <label for="cal-description">Description</label>
+                                placeholder="Descripcion"></textarea>
+                            <label for="cal-description">Descripcion</label>
                         </fieldset>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary cal-add-event waves-effect waves-light" disabled>
-                            Add Event</button>
+                            Añadir nuevo evento</button>
                         <button type="button" class="btn btn-primary d-none cal-submit-event waves-effect waves-light"
                             disabled>submit</button>
                         <button type="button" class="btn btn-flat-danger cancel-event waves-effect waves-light"
-                            data-dismiss="modal">Cancel</button>
+                            data-dismiss="modal">Cancelar</button>
                         <button type="button" class="btn btn-flat-danger remove-event d-none waves-effect waves-light"
                             data-dismiss="modal">Remove</button>
                     </div>
@@ -113,6 +113,9 @@
         </div>
     </div>
 </section>
+
+
+
 
 @push('js')
 <!-- BEGIN: Page Vendor JS-->
@@ -125,6 +128,5 @@
 <script src="{{ asset('vendor/js/pickers/pickadate/picker.date.js') }}"></script>
 
 <!-- BEGIN: Page JS-->
-<script src="../../../app-assets/js/scripts/extensions/fullcalendar.js"></script>
 <script src="{{ asset('js/template/scripts/extensions/fullcalendar.js') }}"></script>
 @endpush

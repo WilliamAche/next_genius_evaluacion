@@ -737,11 +737,11 @@ body.dark-layout .picker__holder .picker__table thead tr .picker__weekday {
   color : #C2C6DC;
 }
 body.dark-layout .picker__holder .picker__table tbody tr td .picker__day {
-  color : #C2C6DC;
+  color : #fff;
 }
 body.dark-layout .picker__holder .picker__table tbody tr td .picker__day:hover {
   background-color : transparent;
-  border : 1px solid #4EC6E8;
+  border : 1px solid #FEBF32;
   color : #C2C6DC;
 }
 body.dark-layout .picker__holder .picker__table tbody tr td .picker__day.picker__day--disabled {
