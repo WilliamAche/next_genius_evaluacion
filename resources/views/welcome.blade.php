@@ -81,7 +81,7 @@
                                             </div>
                                             <div class="col-12 d-flex align-items-center justify-content-center">
                                                 <a href="{{ route('register') }}"
-                                                    class="btn btn-primary w-50">Registrarme</a>
+                                                    class="btn btn-primary w-50">Unirme a Next Genius</a>
                                             </div>
                                         </div>
                                     </div>

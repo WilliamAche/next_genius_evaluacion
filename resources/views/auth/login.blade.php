@@ -66,7 +66,7 @@
                                         @endif
                                     </div>
                                     </div>
-                                    <a href="{{ route('register') }}" class="btn btn-outline-primary float-left btn-inline">Registrarse</a>
+                                    <a href="{{ route('register') }}" class="btn btn-outline-primary float-left btn-inline">Registrarme</a>
                                     <button type="submit" class="btn btn-primary float-right btn-inline">Iniciar sesion</button>
                                 </form>
                             </div>
