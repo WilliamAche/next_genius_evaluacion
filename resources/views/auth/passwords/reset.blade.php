@@ -49,7 +49,7 @@
                                     </fieldset>
                                     <div class="row pt-2">
                                         <div class="col-12 col-md-6 mb-1">
-                                            <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block px-0">Entrar</a>
+                                            <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block px-0">Iniciar sesion</a>
                                         </div>
                                         <div class="col-12 col-md-6 mb-1">
                                             <button type="submit" class="btn btn-primary btn-block px-0">Restablecer la contraseña</button>

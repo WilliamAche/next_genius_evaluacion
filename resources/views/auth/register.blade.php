@@ -66,7 +66,7 @@
                                             </fieldset>
                                         </div>
                                     </div>
-                                    <a href="{{ route('login') }}" class="btn btn-outline-primary float-left btn-inline mb-50">Entrar</a>
+                                    <a href="{{ route('login') }}" class="btn btn-outline-primary float-left btn-inline mb-50">Iniciar sesion</a>
                                     <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Registrarme</a>
                                 </form>
                             </div>

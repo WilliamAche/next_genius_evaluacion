@@ -28,7 +28,7 @@
                     src="{{ asset('img/next-genius/icon.jpg') }}" alt="User Profile Image" width="100%" height="380px">
                     @else
                     <img class="bg-cover rounded-0"
-                    src="{{ asset('storage/photo-banner/'.Auth::user()->banner) }}" alt="User Profile Image" width="100%" height="380px">
+                    src="{{ asset('storage/photo-banner/'.Auth::user()->banner) }}" alt="User Profile Image" width="100%" height="450px">
                     @endif
                     </div>
                     @if (Auth::user()->photo == NULL)
@@ -76,7 +76,7 @@
     </div>
     <section id="profile-info">
         <div class="row">
-            <div class="col-lg-5 col-12">
+            <div class="col-lg-6 col-12">
                 <div class="card">
                     <div class="card-header">
                         <h4>Actualizar informacion</h4>
@@ -122,6 +122,15 @@
                                             onchange="previewFile(this, 'photo_preview')" accept="image/*">
                                     </div>
                                 </div>
+
+                                <div class="row mb-4 mt-4 d-none col-12" id="photo_preview_wrapper">
+                                    <div class="col"></div>
+                                    <div class="col-auto">
+                                        <img id="photo_preview" class="img-fluid rounded" />
+                                    </div>
+                                    <div class="col"></div>
+                                </div>
+
                             </div>
                             <div class="mt-1">
                                 <h6 class="mb-0">foto del banner:</h6>
@@ -133,6 +142,16 @@
                                             onchange="previewFile(this, 'banner_preview')" accept="image/*">
                                     </div>
                                 </div>
+
+
+                                <div class="row mb-4 mt-4 d-none col-12" id="photo_preview_wrapper">
+                                    <div class="col"></div>
+                                    <div class="col-auto">
+                                        <img id="banner_preview" class="img-fluid rounded" />
+                                    </div>
+                                    <div class="col"></div>
+                                </div>
+
                             </div>
 
                             <button type="submit" class="btn btn-primary d-flex justify-content-center mt-1">
@@ -142,7 +161,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-lg-7 col-12">
+            <div class="col-lg-6 col-12">
                 @include('auth.passwords.change')
             </div>
         </div>
@@ -153,8 +172,20 @@
 
 
 
+
 @push('js')
 <script>
+
+    $(document).ready(function() {
+              @if($user->photo != NULL)
+                    previewPersistedFile("{{asset('storage/photo-profile/'.$user->photo)}}", 'photo_preview');
+              @endif
+
+            @if($user->banner != NULL)
+                    previewPersistedFile("{{asset('storage/photo-banner/'.$user->banner)}}", 'banner_preview');
+              @endif
+            });
+    
       function previewFile(input, preview_id) {
         if (input.files && input.files[0]) {
           var reader = new FileReader();
@@ -166,6 +197,13 @@
           $("label[for='" + $(input).attr('id') + "']").text(input.files[0].name);
           reader.readAsDataURL(input.files[0]);
         }
+      }
+    
+      function previewPersistedFile(url, preview_id) {
+        $("#" + preview_id).attr('src', url);
+        $("#" + preview_id).css('height', '300px');
+        $("#" + preview_id).parent().parent().removeClass('d-none');
+    
       }
     </script>
 @endpush
