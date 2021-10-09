@@ -93,13 +93,13 @@ $(document).ready(function() {
     $('.dataex-html5-selectors').DataTable( {
         dom: 'Bfrtip',
         buttons: [
-            {
-                extend: 'copyHtml5',
-                text: 'COPIAR',
-                exportOptions: {
-                    columns: [ 0, ':visible' ]
-                }
-            },
+            // {
+            //     extend: 'copyHtml5',
+            //     text: 'COPIAR',
+            //     exportOptions: {
+            //         columns: [ 0, ':visible' ]
+            //     }
+            // },
             {
                 extend: 'pdfHtml5',
                 text: 'PDF',

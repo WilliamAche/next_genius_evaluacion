@@ -24,4 +24,21 @@
 
 <!-- BEGIN: Custom CSS-->
 <link rel="stylesheet" href="{{ asset('css/template/style.css') }}">
+
+<style>
+    body.dark-layout .table thead tr th {
+        border: 0;
+        background-color: #f7b12f;
+        color: #000000;
+    }
+
+    body.dark-layout 
+    .dataTables_wrapper .table.dataTable thead td, body.dark-layout 
+    .dataTables_wrapper .table.dataTable thead th {
+        border: 0;
+        color: #000000;
+    }
+
+</style>
+
 @stack('css')
