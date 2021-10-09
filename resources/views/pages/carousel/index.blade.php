@@ -2,7 +2,7 @@
 
     <div class="col-md-6 col-sm-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-center">
                 <h4 class="card-title">Cursos Obtenidos</h4>
             </div>
             <div class="card-content">
@@ -61,8 +61,8 @@
 
     <div class="col-md-6 col-sm-12">
         <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Optional captions</h4>
+            <div class="card-header d-flex justify-content-center">
+                <h4 class="card-title">Nuevos cursos disponibles</h4>
             </div>
             <div class="card-content">
                 <div class="card-body">

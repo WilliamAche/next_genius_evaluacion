@@ -9,10 +9,10 @@
 
 $(window).on("load", function () {
 
-  var $primary = '#C9983B';
+  var $primary = '#f7b12f';
   var $danger = '#EA5455';
   // var $warning = '#FF9F43';
-  var $warning = '#C9983B';
+  var $warning = '#f7b12f';
   var $info = '#0DCCE1';
   var $primary_light = '#8F80F9';
   var $warning_light = '#FFC085';

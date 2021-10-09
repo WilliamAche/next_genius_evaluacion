@@ -59,7 +59,7 @@
 }
 .email-application .content-area-wrapper .sidebar .list-group .list-group-item.active {
   background : transparent;
-  color : #C9983B;
+  color : #f7b12f;
 }
 .email-application .content-area-wrapper .content-right {
   width : calc(100% - 260px);

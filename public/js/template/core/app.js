@@ -12,7 +12,7 @@
   var $html = $("html");
   var $body = $("body");
   var $danger = "#ea5455";
-  var $primary = "#C9983B";
+  var $primary = "#f7b12f";
   var $textcolor = "#4e5154";
 
   $(window).on("load", function () {

@@ -25,7 +25,7 @@
                     <div class="vh-50">
                     @if (Auth::user()->banner == NULL)
                     <img class="bg-cover rounded-0"
-                    src="{{ asset('img/next-genius/icon.jpg') }}" alt="User Profile Image" width="100%" height="380px">
+                    src="{{ asset('img/next-genius/banner.png') }}" alt="User Profile Image" width="100%" height="450px">
                     @else
                     <img class="bg-cover rounded-0"
                     src="{{ asset('storage/photo-banner/'.Auth::user()->banner) }}" alt="User Profile Image" width="100%" height="450px">

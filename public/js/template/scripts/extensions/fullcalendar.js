@@ -11,18 +11,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // color object for different event types
   var colors = {
-    primary: "#C9983B",
+    primary: "#f7b12f",
     success: "#28c76f",
     danger: "#ea5455",
-    warning: "#ff9f43"
+    info: "#0E81EA"
+    // warning: "#ff9f43"
   };
 
   // chip text object for different event types
   var categoryText = {
-    primary: "Others",
-    success: "Business",
+    primary: "Otros",
+    success: "Clases",
     danger: "Personal",
-    warning: "Work"
+    info: "Trabajos"
   };
   var categoryBullets = $(".cal-category-bullets").html(),
     evtColor = "",
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     plugins: ["dayGrid", "timeGrid", "interaction"],
     customButtons: {
       addNew: {
-        text: ' Add',
+        text: ' Nuevo evento',
         click: function () {
           var calDate = new Date,
             todaysDate = calDate.toISOString().slice(0, 10);

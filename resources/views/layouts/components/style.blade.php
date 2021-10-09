@@ -26,17 +26,33 @@
 <link rel="stylesheet" href="{{ asset('css/template/style.css') }}">
 
 <style>
+    /* datatables */
     body.dark-layout .table thead tr th {
         border: 0;
         background-color: #f7b12f;
-        color: #000000;
+        color: #ffffff;
     }
 
-    body.dark-layout 
-    .dataTables_wrapper .table.dataTable thead td, body.dark-layout 
-    .dataTables_wrapper .table.dataTable thead th {
+    body.dark-layout .table tfoot tr th {
         border: 0;
-        color: #000000;
+        background-color: #f7b12f;
+        color: #ffffff;
+    }
+
+    body.dark-layout .dataTables_wrapper .table.dataTable tfoot tr th {
+        color: #ffffff;
+    }
+
+    body.dark-layout .dataTables_wrapper .table.dataTable tfoot tr,
+    body.dark-layout .dataTables_wrapper .table.dataTable tfoot th {
+        border: 0;
+        color: #ffffff;
+    }
+
+    body.dark-layout .dataTables_wrapper .table.dataTable thead td,
+    body.dark-layout .dataTables_wrapper .table.dataTable thead th {
+        border: 0;
+        color: #ffffff;
     }
 
 </style>

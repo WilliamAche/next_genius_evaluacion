@@ -12,7 +12,7 @@
 
     <title>Next Genius - Lanzamiento</title>
 
-    <link rel="shortcut icon" href="{{ asset('img/next-genius/icon.jpg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/next-genius/favicon/favicon.ico') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->

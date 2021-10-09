@@ -16,8 +16,8 @@
 }
 
 #dashboard-analytics .bg-analytics {
-  background : -webkit-linear-gradient(332deg, #C9983B, rgba(253, 185, 49, 1));
-  background :         linear-gradient(118deg, #C9983B, rgba(253, 185, 49, 1));
+  background : -webkit-linear-gradient(332deg, #f7b12f, rgba(253, 185, 49, 1));
+  background :         linear-gradient(118deg, #f7b12f, rgba(253, 185, 49, 1));
 }
 #dashboard-analytics .bg-analytics .avatar {
   margin-bottom : 2rem;

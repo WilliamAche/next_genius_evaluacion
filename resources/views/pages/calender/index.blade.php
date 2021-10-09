@@ -19,11 +19,11 @@
                             <div class="bullets-group-1 mt-2">
                                 <div class="category-business mr-1">
                                     <span class="bullet bullet-success bullet-sm mr-25"></span>
-                                    Business
+                                    Clases
                                 </div>
                                 <div class="category-work mr-1">
-                                    <span class="bullet bullet-warning bullet-sm mr-25"></span>
-                                    Work
+                                    <span class="bullet bullet-info bullet-sm mr-25"></span>
+                                    Trabajos
                                 </div>
                                 <div class="category-personal mr-1">
                                     <span class="bullet bullet-danger bullet-sm mr-25"></span>
@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="category-others">
                                     <span class="bullet bullet-primary bullet-sm mr-25"></span>
-                                    Others
+                                    Otros
                                 </div>
                             </div>
                         </div>
@@ -41,6 +41,7 @@
             </div>
         </div>
     </div>
+
     <!-- calendar Modal starts-->
     <div class="modal fade text-left modal-calendar" tabindex="-1" role="dialog" aria-labelledby="cal-modal"
         aria-modal="true">
@@ -56,17 +57,16 @@
                     <div class="modal-body">
                         <div class="d-flex justify-content-between align-items-center add-category">
                             <div class="chip-wrapper"></div>
-                            <div class="label-icon pt-1 pb-2 dropdown calendar-dropdown">
-                                <i class="feather icon-tag dropdown-toggle" id="cal-event-category"
-                                    data-toggle="dropdown"></i>
+                            <div class="label-icon pt-1 pb-2 dropdown calendar-dropdown text-white" data-toggle="dropdown" id="cal-event-category">Categorias 
+                                <i class="feather icon-tag dropdown-toggle"></i>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cal-event-category">
                                     <span class="dropdown-item business" data-color="success">
                                         <span class="bullet bullet-success bullet-sm mr-25"></span>
-                                        Business
+                                        Clases
                                     </span>
                                     <span class="dropdown-item work" data-color="warning">
-                                        <span class="bullet bullet-warning bullet-sm mr-25"></span>
-                                        Work
+                                        <span class="bullet bullet-info bullet-sm mr-25"></span>
+                                        Trabajos
                                     </span>
                                     <span class="dropdown-item personal" data-color="danger">
                                         <span class="bullet bullet-danger bullet-sm mr-25"></span>
@@ -74,7 +74,7 @@
                                     </span>
                                     <span class="dropdown-item others" data-color="primary">
                                         <span class="bullet bullet-primary bullet-sm mr-25"></span>
-                                        Others
+                                        Otros
                                     </span>
                                 </div>
                             </div>
