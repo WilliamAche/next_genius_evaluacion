@@ -20,7 +20,7 @@ class HttpController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('HttpController - http403 -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     } 
 }

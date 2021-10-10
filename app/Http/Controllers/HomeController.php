@@ -20,7 +20,7 @@ class HomeController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('HomeController - __construct -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
@@ -37,7 +37,7 @@ class HomeController extends Controller
         
         } catch (\Throwable $th) {
             Log::error('HomeController - index -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 }

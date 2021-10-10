@@ -38,7 +38,7 @@ class ChangePasswordController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('ChangePasswordController - index -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     } 
    
@@ -64,7 +64,7 @@ class ChangePasswordController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('ChangePasswordController - store -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 }

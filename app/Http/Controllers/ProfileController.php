@@ -29,7 +29,7 @@ class ProfileController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('ProfileController - __construct -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
@@ -47,7 +47,7 @@ class ProfileController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('ProfileController - profile -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     } 
     
@@ -86,7 +86,7 @@ class ProfileController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('ProfileController - update -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
    
@@ -101,7 +101,7 @@ class ProfileController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('ProfileController - changePassword -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     } 
    
@@ -125,7 +125,7 @@ class ProfileController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('ProfileController - store -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 }

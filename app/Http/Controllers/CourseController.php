@@ -23,7 +23,7 @@ class CourseController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('CourseController - create -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
@@ -69,7 +69,7 @@ class CourseController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('CourseController - store -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
@@ -87,7 +87,7 @@ class CourseController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('CourseController - editAdmin -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
@@ -137,7 +137,7 @@ class CourseController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('CourseController - updateAdmin -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
@@ -155,7 +155,7 @@ class CourseController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('CourseController - listAdmin -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
@@ -197,7 +197,7 @@ class CourseController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('CourseController - listUser -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 

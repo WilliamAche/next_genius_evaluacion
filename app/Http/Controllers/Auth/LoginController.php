@@ -46,7 +46,7 @@ class LoginController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('LoginController - __construct -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 }

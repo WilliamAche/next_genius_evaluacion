@@ -66,7 +66,7 @@ class RegisterController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('RegisterController - validator -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
@@ -88,7 +88,7 @@ class RegisterController extends Controller
 
         } catch (\Throwable $th) {
             Log::error('RegisterController - create -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 }
