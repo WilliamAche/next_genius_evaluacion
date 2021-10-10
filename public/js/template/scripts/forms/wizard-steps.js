@@ -14,7 +14,7 @@ $(".number-tab-steps").steps({
     transitionEffect: "fade",
     titleTemplate: '<span class="step">#index#</span> #title#',
     labels: {
-        finish: 'Submit'
+        finish: 'Crear'
     },
     onFinished: function (event, currentIndex) {
         alert("Form submitted.");

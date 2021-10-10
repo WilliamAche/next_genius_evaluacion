@@ -572,6 +572,7 @@ body.dark-layout .chip .avatar {
 }
 body.dark-layout .chip .chip-body .chip-text, body.dark-layout .chip .chip-body span {
   color : #FFFFFF;
+  font-weight: bold;
 }
 body.dark-layout .divider .divider-text {
   background-color : transparent;

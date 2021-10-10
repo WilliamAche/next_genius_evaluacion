@@ -22,28 +22,55 @@ Auth::routes();
 
 // Rutas para los usuarios logueados
 Route::group(['middleware' => ['auth']], function () {
-Route::get('home', 'HomeController@index')->name('home');
 
-    Route::group(['prefix' => 'auth'], function () {
+    Route::get('home', 'HomeController@index')->name('home');
 
+    // Rutas para los usuarios con rol normal
+    Route::group(['prefix' => 'profile'], function () {
 
-        // Rutas para los usuarios sin rol
-        Route::group(['prefix' => 'profile'], function () {
+        Route::get('/', 'ProfileController@profile')->name('profile');
+        Route::patch('profile-update', 'ProfileController@update')->name('profile.update');
 
-            Route::get('/', 'ProfileController@profile')->name('profile');
-            Route::patch('profile-update', 'ProfileController@update')->name('profile.update');
+        Route::get('change-password', 'ProfileController@changePassword');
+        Route::post('change-password', 'ProfileController@store')->name('change.password');
 
-            Route::get('change-password', 'ProfileController@changePassword');
-            Route::post('change-password', 'ProfileController@store')->name('change.password');
+    });
+
+    // ruta paa los cursos
+     Route::prefix('course')->group(function(){
+
+        Route::get('edit/{id}','CourseController@editUser')->name('course.edit');
+        Route::patch('update/{id}','CourseController@updateUser')->name('course.update');
+        Route::get('list','CourseController@listUser')->name('course.list');
+        Route::get('show/{id}','CourseController@showUser')->name('course.show');
+
+    });
+
+    // Rutas para los usuarios con rol de administrador
+    Route::group(['middleware' => ['role:1']], function () {
+
+        Route::group(['prefix' => 'users'], function () {
+
+            Route::get('list', 'UsersController@index')->name('users.list');
 
         });
-
-        // Rutas para los usuarios con rol de administrador
-        Route::group(['middleware' => ['role:1']], function () {
-
+        
+        // ruta paa los cursos
+        Route::prefix('course')->group(function(){
+            
+            Route::get('create','CourseController@create')->name('course.create');
+            Route::post('store','CourseController@store')->name('course.store');
+            
+            Route::get('edit/{id}','CourseController@editAdmin')->name('course.edit');
+            Route::patch('update/{id}','CourseController@updateAdmin')->name('course.update');
+            Route::get('list','CourseController@listAdmin')->name('course.list');
+            Route::get('show/{id}','CourseController@showAdmin')->name('course.show');
+            Route::delete('delete/{id}','CourseController@destroy')->name('course.destroy');
+            
         });
 
     });
+
 });
 
 // http paginas de error

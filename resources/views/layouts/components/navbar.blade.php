@@ -148,15 +148,13 @@
                              href="#" data-toggle="dropdown">
                              <div class="user-nav d-sm-flex d-none"><span
                                      class="user-name text-bold-600">{{ Auth::user()->name }}</span>
-                                 {{-- @if (Auth::user()->status == 0)
+                                 @if (Auth::user()->status == 0 && Auth::user()->admin == 0)
                                  <span class="user-status"><i
-                                         class="fa fa-circle font-small-3 text-danger"></i>Inactivo</span>
-                                 @else
+                                         class="fa fa-circle font-small-3 text-danger"></i>Normal</span>
+                                 @elseif (Auth::user()->status == 1 && Auth::user()->admin == 1)
                                  <span class="user-status"><i
-                                         class="fa fa-circle font-small-3 text-success"></i>Activo</span>
-                                 @endif --}}
-                                 <span class="user-status"><i
-                                    class="fa fa-circle font-small-3 text-success"></i>Activo</span>
+                                         class="fa fa-circle font-small-3 text-success"></i>Administrador</span>
+                                 @endif
                              </div>
                              @if (Auth::user()->photo == NULL)
                              <span>

@@ -23,7 +23,7 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
-        /**
+    /**
     * lleva a la vista del perfil
     */
     public function profile()

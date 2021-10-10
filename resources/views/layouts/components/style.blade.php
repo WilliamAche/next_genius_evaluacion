@@ -29,30 +29,30 @@
     /* datatables */
     body.dark-layout .table thead tr th {
         border: 0;
-        background-color: #f7b12f;
-        color: #ffffff;
+        /* background-color: #f7b12f; */
+        color: #f7b12f;
     }
 
     body.dark-layout .table tfoot tr th {
         border: 0;
-        background-color: #f7b12f;
-        color: #ffffff;
+        /* background-color: #f7b12f; */
+        color: #f7b12f;
     }
 
     body.dark-layout .dataTables_wrapper .table.dataTable tfoot tr th {
-        color: #ffffff;
+        color: #f7b12f;
     }
 
     body.dark-layout .dataTables_wrapper .table.dataTable tfoot tr,
     body.dark-layout .dataTables_wrapper .table.dataTable tfoot th {
         border: 0;
-        color: #ffffff;
+        color: #f7b12f;
     }
 
     body.dark-layout .dataTables_wrapper .table.dataTable thead td,
     body.dark-layout .dataTables_wrapper .table.dataTable thead th {
         border: 0;
-        color: #ffffff;
+        color: #f7b12f;
     }
 
 </style>

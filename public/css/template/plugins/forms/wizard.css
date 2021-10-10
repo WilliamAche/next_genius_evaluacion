@@ -163,12 +163,12 @@
   float : right;
 }
 .app-content .wizard > .actions > ul > li > a {
-  background : #f7b12f;
+  /* background : #f7b12f; */
   color : #FFFFFF;
   display : block;
   padding : 7px 12px;
   border-radius : 0.42rem;
-  border : 1px solid transparent;
+  border : 1px solid #f7b12f;
 }
 .app-content .wizard > .actions > ul > li > a:hover {
   box-shadow : 0 0 0 100px rgba(0, 0, 0, 0.05) inset;
@@ -180,9 +180,11 @@
   box-shadow : 0 0 0 100px rgba(0, 0, 0, 0.1) inset;
 }
 .app-content .wizard > .actions > ul > li > a[href='#previous'] {
-  background-color : #f7b12f;
+  /* background-color : #f7b12f; */
   color : #FFFFFF;
   border-radius : 0.42rem;
+  border : 1px solid #f7b12f;
+
 }
 .app-content .wizard > .actions > ul > li > a[href='#previous']:hover {
   box-shadow : 0 0 0 100px rgba(0, 0, 0, 0.02) inset;
