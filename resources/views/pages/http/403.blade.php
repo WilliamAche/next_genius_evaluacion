@@ -48,7 +48,7 @@
                             <div class="card-content">
                                 <div class="card-body text-center">
                                     <img src="{{ asset('img/template/pages/not-authorized.png') }}" class="img-fluid align-self-center" alt="branding logo">
-                                    <h1 class="font-large-2 my-2">No estas autorizado</h1>
+                                    <h1 class="font-large-2 my-2 text-primary">No estas autorizado</h1>
                                     <p class="p-2 text-white">
                                     Lo sentimos, parece que no tiene permiso para acceder a esta sección de la web, por favor, diríjase al inicio 
                                     </p>

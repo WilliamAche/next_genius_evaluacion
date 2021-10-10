@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+// Models
+use App\Models\Orders;
+use App\Models\Course;
+
 // Illuminate
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -33,7 +38,12 @@ class HomeController extends Controller
     {
         try{
 
-            return view('home');
+        $order = Orders::where('user', Auth::id())->get();
+        $course = Course::all();
+
+            return view('home')
+            ->with('order', $order)
+            ->with('course', $course);
         
         } catch (\Throwable $th) {
             Log::error('HomeController - index -> Error: '.$th);

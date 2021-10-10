@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 // Models
 use App\Models\Course;
-
+use App\Models\Orders;
 // Illuminate
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -19,7 +20,9 @@ class ShopController extends Controller
 
         try{
 
-            return view('pages.shop.index');
+            $course = Course::all()->where('status', 1);
+            return view('pages.shop.index')
+            ->with('course', $course);
 
         } catch (\Throwable $th) {
             Log::error('ShopController - index -> Error: '.$th);
@@ -28,130 +31,78 @@ class ShopController extends Controller
     }
 
     /**
-     * Valida los campos y crea el curso
+     * Crea una orden
     */
-    public function store(Request $request){
-
-        $fields = [
-            "name" => ['required'],
-            "price" => ['required'],
-            "description" => ['required'],
-            "status" => ['required'],
-        ];
-
-        $msj = [
-            'name.required' => 'El titulo del curso es Requerido',
-            'price.required' => 'El precio del curso es Requerido',
-            'description.required' => 'La descripcion es Requerida',
-            'status.required' => 'El estado es Requerido',
-        ];
-
-        $this->validate($request, $fields, $msj);
-
-        $course = Course::create($request->all());
-
-        //  guarda el banner
-        if($request->hasFile('banner')) {
-          
-          $file = $request->file('banner');
-          $name = $course->id.".".$file->getClientOriginalExtension();
-          $file->move(public_path('storage') . '/course-banner', $name);
-          $course->banner = $name;
-
-        } 
-
-        $course->save();
-
-        alert()->success('Curso creado');
-        return redirect()->route('course.list')->with('msj-success', 'El Curso se creo Exitosamente');
-    }
-
-    /**
-    * lleva a la vista para editar el curso
-    */
-    public function editAdmin($id){
+    public function order($id){
 
         $course = Course::find($id);
 
-        return view('admin.Courses.edit')
-        ->with('course', $course);
-    }
+        $order = Orders::create([
+            'user' => Auth::id(),
+            'course' => $course->id,
+            'price' => $course->price,
+        ]);
 
+        $order->save();
 
-    /**
-     * Valida los campos y actualiza el curso
-    */
-    public function updateAdmin(Request $request, $id){
-
-        $course = Course::find($id);
-
-        $fields = [
-            "name" => ['required'],
-            "price" => ['required'],
-            "description" => ['required'],
-            "status" => ['required'],
-        ];
-
-        $msj = [
-            'name.required' => 'El titulo del curso es Requerido',
-            'price.required' => 'El precio del curso es Requerido',
-            'description.required' => 'La descripcion es Requerida',
-            'status.required' => 'El estado es Requerido',
-        ];
-
-        $this->validate($request, $fields, $msj);
-
-        $course->update($request->all());
-
-        //  guarda el banner
-        if($request->hasFile('banner')) {
-          
-          //  eliminar el banner anterior
-          $course->destroy(public_path('storage') . '/course-banner', $course->name);
-          $file = $request->file('banner');
-          $name = $course->id.".".$file->getClientOriginalExtension();
-          $file->move(public_path('storage') . '/course-banner', $name);
-          $course->banner = $name;
-
-        } 
-        $course->save();
-
-        alert()->success('Curso actualizado');
-        return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Actualizado ');
+        alert()->success('Curso comprado', 'Esperando aprobacion de los administradores');
+        return redirect()->route('shop.list');
     }
 
     /**
-    * lleva a la lista de los curso
+    * lleva a la vista de las ordenes
     */
-    public function listAdmin(){
+    public function orderList(){
+
+        $order = Orders::all()->where('status', 0);
+
+        return view('pages.shop.orders')
+        ->with('order', $order);
+    }
+
+    /**
+    * Actualiza la orden
+    */
+    public function orderUpdate($status, $id){
+
+        if($status == "approved")
+        $status = '1';
         
-        $course = Course::all();
+        elseif($status == "rejected")
+        $status = '2';
 
-        return view('admin.Courses.list')
+        $order = Orders::find($id);
+
+        $order->update([
+            'status' => $status
+        ]);
+
+        $order->save();
+
+        alert()->success('Orden actualizada');
+        return redirect()->route('course.orders');
+    }
+
+    /**
+    * lleva a una vista mas detallada del curso
+    */
+    public function details($id){
+
+        $course = Course::find($id);
+
+        return view('pages.shop.details')
         ->with('course', $course);
     }
 
     /**
-    * permite eliminar el curso
+    * lleva a la vista de las facturas
     */
-    public function destroy($id){
+    public function bill(){
 
-        $course = Course::find($id);
+        $order = Orders::where('user',Auth::id())->get();
 
-        $course->delete();
-
-        alert()->success('Curso eliminado');
-        return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Eliminado');
-    }
-
-    // permite ver el curso
-
-    public function showUser($id){
-
-        $course = Course::find($id);
-
-        return view('tickets.componenteTickets.user.show-user')
-        ->with('course', $course);
+        return view('user.bills.index')
+        ->with('order', $order);
     }
 
 }

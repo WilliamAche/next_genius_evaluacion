@@ -96,7 +96,7 @@
                                                     Tamaño máximo de 1mb)</b></label>
                                             <input type="file" id="banner" class="custom-file-input rounded"
                                                 name="banner" onchange="previewFile(this, 'photo_preview')"
-                                                accept="image/*">
+                                                accept="image/*" required>
                                         </div>
                                     </div>
 

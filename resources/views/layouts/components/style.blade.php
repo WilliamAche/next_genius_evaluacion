@@ -57,6 +57,13 @@
         color: #f7b12f;
     }
 
+    .dropdown-notification .dropdown-menu-header {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #10163A;
+        color: #f7b12f;
+        text-align: center;
+    }
 </style>
 
 @stack('css')

@@ -78,23 +78,24 @@
                         <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                             <li class="dropdown-menu-header">
                                 <div class="dropdown-header m-0 p-2">
-                                    <h3 class="white">5 Nuevas</h3><span class="notification-title">Notificaciónes</span>
+                                    <h3 class="text-primary">5 Nuevas</h3><span class="notification-title">Notificaciónes</span>
                                 </div>
                             </li>
                             <li class="scrollable-container media-list">
+
                                 <a class="d-flex justify-content-between" href="javascript:void(0)">
                                     <div class="media d-flex align-items-start">
-                                        <div class="media-left">
-                                            <i class="feather icon-plus-square font-medium-5 primary"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 class="primary media-heading">Tienes una nueva orden!</h6>
-                                            <small class="notification-text"> ¿Me vas a encontrar esta noche?</small>
-                                        </div>
-                                        <small>
-                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">hace 9 horas</time>
-                                        </small>
-                                     </div>
+                                       <div class="media-left">
+                                           <i class="feather icon-alert-triangle font-medium-5 danger"></i>
+                                       </div>
+                                       <div class="media-body">
+                                           <h6 class="danger media-heading yellow darken-3">Advertencia</h6>
+                                           <small class="notification-text">Tu contraseña no es muy segura</small>
+                                       </div>
+                                       <small>
+                                           <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">hace 20 minutos</time>
+                                       </small>
+                                    </div>
                                 </a>
                                 
                                 <a class="d-flex justify-content-between" href="javascript:void(0)">
@@ -103,8 +104,8 @@
                                             <i class="feather icon-download-cloud font-medium-5 success"></i>
                                         </div>
                                         <div class="media-body">
-                                            <h6 class="success media-heading red darken-1">99% Carga del servidor</h6>
-                                            <small class="notification-text">Tienes un nuevo pedido de productos.</small>
+                                            <h6 class="success media-heading red darken-1">90% Descarga en curso</h6>
+                                            <small class="notification-text">9 de 10 videos se estan descargando</small>
                                         </div>
                                         <small>
                                             <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">hace 5 horas</time>
@@ -113,28 +114,28 @@
                                 </a>
                                  
                                 <a class="d-flex justify-content-between" href="javascript:void(0)">
-                                     <div class="media d-flex align-items-start">
+                                    <div class="media d-flex align-items-start">
                                         <div class="media-left">
-                                            <i class="feather icon-alert-triangle font-medium-5 danger"></i>
+                                            <i class="feather icon-plus-square font-medium-5 primary"></i>
                                         </div>
                                         <div class="media-body">
-                                            <h6 class="danger media-heading yellow darken-3">Advertencia</h6>
-                                            <small class="notification-text">Uso del CPU del 99%.</small>
+                                            <h6 class="primary media-heading">Tienes una nueva orden!</h6>
+                                            <small class="notification-text"> Promocion del curso de HTML y CSS</small>
                                         </div>
                                         <small>
-                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">hace 20 minutos</time>
+                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">hace 9 horas</time>
                                         </small>
                                      </div>
                                 </a>
-                                 
+                      
                                 <a class="d-flex justify-content-between" href="javascript:void(0)">
                                      <div class="media d-flex align-items-start">
                                         <div class="media-left">
                                             <i class="feather icon-check-circle font-medium-5 info"></i>
                                         </div>
                                         <div class="media-body">
-                                            <h6 class="info media-heading">Completa la tarea</h6>
-                                            <small class="notification-text">Curso de html pendiente</small>
+                                            <h6 class="info media-heading">Nuevo curso completado</h6>
+                                            <small class="notification-text">Curso de fundamentos de linux</small>
                                         </div>
                                         <small>
                                             <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Semana pasada</time>
@@ -148,11 +149,11 @@
                                             <i class="feather icon-file font-medium-5 warning"></i>
                                         </div>
                                         <div class="media-body">
-                                             <h6 class="warning media-heading">Generar informe mensual</h6>
-                                             <small class="notification-text">Falta el informe de este mes</small>
+                                             <h6 class="warning media-heading">Factura mensual generada</h6>
+                                             <small class="notification-text">La nueva factura de este mes ya se genero</small>
                                         </div>                                   
                                         <small>
-                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">El mes pasado</time>
+                                            <time class="media-meta" datetime="2015-06-11T18:29:20+08:00">Este mes</time>
                                         </small>
                                     </div>
                                 </a>

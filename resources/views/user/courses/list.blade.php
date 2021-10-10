@@ -38,6 +38,8 @@
                                     <th>Id del curso</th>
                                     <th>Nombre del curso</th>
                                     <th>Descripción</th>
+                                    <th>Precio</th>
+                                    <th>Fecha de compra</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,6 +48,8 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->description }}</td>
+                                    <td>{{ $item->price }}</td>
+                                    <td>{{ $item->created_at }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -55,9 +59,7 @@
                                     <th>Nombre del curso</th>
                                     <th>Descripción</th>
                                     <th>Precio</th>
-                                    <th>Estado</th>
-                                    <th>Fecha de Creacion</th>
-                                    <th>Accion</th>
+                                    <th>Fecha de compra</th>
                                 </tr>
                             </tfoot>
                         </table>

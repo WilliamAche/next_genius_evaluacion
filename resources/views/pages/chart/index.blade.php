@@ -13,7 +13,7 @@
                     <div class="text-center">
                         <h1 class="mb-2 text-white">Bienvenido {{ Auth::user()->name }}</h1>
                         <p class="m-auto w-75">Nos alegra mucho verte nuevamente por aqui, visita nuestros nuevos 
-                            <a href="#" class="text-info">cursos</a> 
+                            <a href="{{ route('shop.list') }}" class="text-info">cursos</a> 
                         </p>
                     </div>
                 </div>
@@ -26,10 +26,10 @@
             <div class="card-header d-flex flex-column align-items-start pb-0">
                 <div class="avatar bg-rgba-warning p-50 m-0">
                     <div class="avatar-content">
-                        <i class="feather icon-users text-warning font-medium-5"></i>
+                        <i class="feather icon-award text-warning font-medium-5"></i>
                     </div>
                 </div>
-                <h2 class="text-bold-700 mt-1 mb-25">92.6k</h2>
+                <h2 class="text-bold-700 mt-1 mb-25">92</h2>
                 <p class="mb-0">Cursos Comprados</p>
             </div>
             <div class="card-content">
@@ -43,11 +43,11 @@
             <div class="card-header d-flex flex-column align-items-start pb-0">
                 <div class="avatar bg-rgba-danger p-50 m-0">
                     <div class="avatar-content">
-                        <i class="feather icon-package text-danger font-medium-5"></i>
+                        <i class="feather icon-archive text-danger font-medium-5"></i>
                     </div>
                 </div>
-                <h2 class="text-bold-700 mt-1 mb-25">97.5K</h2>
-                <p class="mb-0">Ordenes canceladas</p>
+                <h2 class="text-bold-700 mt-1 mb-25">34</h2>
+                <p class="mb-0">Cantidad de ordenes</p>
             </div>
             <div class="card-content">
                 <div id="orders-received-chart"></div>

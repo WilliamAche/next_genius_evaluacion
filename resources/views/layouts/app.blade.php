@@ -24,9 +24,6 @@
         </div>
     </div>
 
-    <div class="sidenav-overlay"></div>
-    <div class="drag-target"></div>
-
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-dark navbar-shadow">
         <p class="clearfix blue-grey lighten-2 mb-0">

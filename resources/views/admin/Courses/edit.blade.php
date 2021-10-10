@@ -69,8 +69,8 @@
                                         <div class="form-group">
                                             <label>Estado</label>
                                             <select class="custom-select form-control" name="status" required>
-                                                <option value="0">Inactivo</option>
-                                                <option value="1">Activo</option>
+                                                <option value="0" @if($course->status == '0') selected @endif>Inactivo</option>
+                                                <option value="1" @if($course->status == '1') selected @endif>Activo</option>
                                             </select>
                                         </div>
                                     </div>

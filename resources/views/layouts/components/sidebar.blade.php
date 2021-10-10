@@ -24,23 +24,35 @@
             <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
                 @if (Auth::user()->admin == 0)
                     <li class="dropdown nav-item"><a class="nav-link" href="{{ route('home') }}">
-                        <i class="feather icon-home"></i><span data-i18n="Dashboard">Inicio</span></a>
+                        <i class="feather icon-home"></i><span>Inicio</span></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="nav-link" href="{{ route('shop.list') }}"><i class="feather icon-shopping-bag"></i><span>Tienda</span></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="nav-link" href="{{ route('course.list.user') }}"><i class="feather icon-sidebar"></i><span>Cursos</span></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="nav-link" href="{{ route('course.bill') }}"><i class="feather icon-list"></i><span>Facturas</span></a>
                     </li>
                 @else
                     <li class="dropdown nav-item">
-                        <a class="nav-link" href="{{ route('home') }}"><i class="feather icon-home"></i><span data-i18n="Dashboard">Inicio</span></a>
+                        <a class="nav-link" href="{{ route('home') }}"><i class="feather icon-home"></i><span>Inicio</span></a>
                     </li>
-
                     <li class="dropdown nav-item">
-                        <a class="nav-link" href="{{ route('users.list') }}"><i class="feather icon-shopping-bag"></i><span data-i18n="Dashboard">Tienda</span></a>
+                        <a class="nav-link" href="{{ route('shop.list') }}"><i class="feather icon-shopping-bag"></i><span>Tienda</span></a>
                     </li>
-
                     <li class="dropdown nav-item">
-                        <a class="nav-link" href="{{ route('course.list') }}"><i class="feather icon-sidebar"></i><span data-i18n="Dashboard">Cursos</span></a>
+                        <a class="nav-link" href="{{ route('course.list') }}"><i class="feather icon-sidebar"></i><span>Cursos</span></a>
                     </li>
-
                     <li class="dropdown nav-item">
-                        <a class="nav-link" href="{{ route('users.list') }}"><i class="feather icon-user"></i><span data-i18n="Dashboard">Usuarios</span></a>
+                        <a class="nav-link" href="{{ route('course.bill') }}"><i class="feather icon-list"></i><span>Facturas</span></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="nav-link" href="{{ route('course.orders') }}"><i class="feather icon-clipboard"></i><span>Ordenes</span></a>
+                    </li>
+                    <li class="dropdown nav-item">
+                        <a class="nav-link" href="{{ route('users.list') }}"><i class="feather icon-user"></i><span>Usuarios</span></a>
                     </li>
                 @endif
             </ul>

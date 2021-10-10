@@ -13,6 +13,7 @@
 <script src="{{ asset('js/template/core/app-menu.js') }}"></script>
 <script src="{{ asset('js/template/core/app.js') }}"></script>
 <script src="{{ asset('js/template/scripts/components.js') }}"></script>
+<script src="{{ asset('js/template/scripts/footer.js') }}"></script>
 
 <!-- BEGIN: Page JS-->
 {{-- <script src="{{ asset('js/template/scripts/pages/dashboard-ecommerce.js') }}"></script> --}}
