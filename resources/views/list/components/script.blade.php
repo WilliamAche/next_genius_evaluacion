@@ -27,4 +27,27 @@
         dom: 'Bfrtip'
     })
 </script> --}}
+
+<script>
+    $('.delete').confirm({
+        title: 'Confirmar!',
+        content: 'Eliminar este registro?',
+        theme: 'supervan',
+        buttons: {
+            confirmar: {
+            btnClass: 'btn-danger',
+                action: function () {
+                        $('.delete').addClass('is-loading').addClass('disabled');
+                        document.getElementById('delete').submit();
+                    }
+            },
+            cancel: {
+                btnClass: 'btn-outline-secondary',
+                    action: function () {
+
+                }
+            }
+        }
+    });
+</script>
 @endpush

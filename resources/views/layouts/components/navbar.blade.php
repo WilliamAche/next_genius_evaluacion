@@ -151,7 +151,7 @@
                                  @if (Auth::user()->status == 0 && Auth::user()->admin == 0)
                                  <span class="user-status"><i
                                          class="fa fa-circle font-small-3 text-danger"></i>Normal</span>
-                                 @elseif (Auth::user()->status == 1 && Auth::user()->admin == 1)
+                                 @elseif (Auth::user()->admin == 1)
                                  <span class="user-status"><i
                                          class="fa fa-circle font-small-3 text-success"></i>Administrador</span>
                                  @endif

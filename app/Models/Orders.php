@@ -26,4 +26,14 @@ class Orders extends Model
         return $this->belongsTo('App\Models\User', 'user', 'id');
     }
 
+    /**
+     * Relacion con el usuario
+     *
+     * @return void 
+     */
+    public function getCourse()
+    {
+        return $this->belongsTo('App\Models\Course', 'course', 'id');
+    }
+
 }

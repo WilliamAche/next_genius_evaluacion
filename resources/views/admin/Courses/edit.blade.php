@@ -1,92 +1,131 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
+
+@include('admin.Courses.components.style')
 
 @section('content')
 
-<section id="basic-vertical-layouts">
-    <div class="row match-height d-flex justify-content-center">
-        <div class="col-md-6 col-12">
+<div class="content-header-left col-md-9 col-12 mb-2">
+    <div class="row breadcrumbs-top">
+        <div class="col-12">
+            <h2 class="content-header-title float-left mb-0">Cursos</h2>
+            <div class="breadcrumb-wrapper col-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item active"><a href="{{ route('course.list') }}">Lista de cursos</a>
+                    </li>
+                    <li class="breadcrumb-item active">Editar curso
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Atendiendo el Ticket #{{ $ticket->id}}</h4>
-                    <h4 class="card-title mt-2">Usuario: <span class="text-primary">{{ $ticket->getUser->fullname}}</span></h4>
+                <div class="d-flex justify-content-between">
+                    <div class="card-header">
+                        <h4 class="card-title">Formulario para actualizar el curso</h4>
+                    </div>
+                    <a href="{{ route('course.list')}}" class="btn btn-outline-primary mt-4 mr-2"><i
+                            class="feather icon-list"></i>&nbsp; Volver a la lista</a>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form action="{{route('course.update-admin', $ticket->id)}}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <div class="form-body">
+                            <form class="number-tab-steps wizard-circle" action="{{route('course.update', $course->id)}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                @method('PATCH')
+
+                            <!-- Step 1 -->
+                            <h6>Informacion</h6>
+
+                            <fieldset>
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>Email de contacto</label>
-                                            <input type="email" readonly id="email" class="form-control"
-                                                value="{{ $ticket->email }}" name="email">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Whatsapp de contacto</label>
-                                            <input type="text" readonly id="whatsapp" class="form-control"
-                                                value="{{ $ticket->whatsapp }}" name="whatsapp">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Asunto del Ticket</label>
-                                            <input type="text" id="issue" readonly class="form-control"
-                                                value="{{ $ticket->issue }}" name="issue">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Especificación del Ticket</label>
-                                            <textarea type="text" rows="5" readonly id="description"
-                                                class="form-control"
-                                                name="description">{{ $ticket->description }}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Nota del Administrador</label>
-                                            <span class="text-danger text-bold-600">(Dejar nota Obligatoria para el
-                                                usuario)</span>
-                                            <textarea type="text" rows="5" id="note_admin"
-                                                placeholder="En este campo estara la nota que deja el administrador que atendio su orden"
-                                                class="form-control"
-                                                name="note_admin">{{$ticket->note_admin}}</textarea>
+                                            <label>Titulo del curso</label>
+                                            <input type="text" class="form-control" name="name" value="{{ $course->name }}" required>
                                         </div>
                                     </div>
 
-                                    <div class="col-12">
+                                    <div class="col-sm-6">
                                         <div class="form-group">
-                                            <div class="controls">
-                                                <label for="status">Estado del ticket</label>
-                                                <span class="text-danger text-bold-600">OBLIGATORIO</span>
-                                                <select name="status" id="status"
-                                                    class="custom-select status @error('status') is-invalid @enderror"
-                                                    required data-toggle="select">
-                                                    <option value="0" @if($ticket->status == '0') selected  @endif>En Espera</option>
-                                                    <option value="1" @if($ticket->status == '1') selected  @endif>Solucionado</option>
-                                                    <option value="2" @if($ticket->status == '2') selected  @endif>Procesando</option>
-                                                    <option value="3" @if($ticket->status == '3') selected  @endif>Cancelada</option>
-                                                </select>
-                                            </div>
+                                            <label>Precio del curso</label>
+                                            <input type="number" class="form-control" name="price" value="{{ $course->price }}" required>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <button type="submit"
-                                            class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Actualizar
-                                            Ticket</button>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Descripcion</label>
+                                            <textarea type="text" rows="3" class="form-control" name="description"
+                                                required>{{ $course->description }}</textarea>
+                                        </div>
                                     </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Estado</label>
+                                            <select class="custom-select form-control" name="status" required>
+                                                <option value="0">Inactivo</option>
+                                                <option value="1">Activo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                 </div>
-                            </div>
+                            </fieldset>
+
+                            <!-- Step 2 -->
+                            <h6>Imagen</h6>
+
+                            <fieldset>
+                                <div class="row mb-2">
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <h2 class="font-weight-bold text-white">Imagen del banner</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="media col-sm-12">
+                                        <div class="custom-file">
+                                            <label class="custom-file-label  border border-primary rounded">Imagen del banner <b>(Se permiten JPG o PNG.
+                                                    Tamaño máximo de 1mb)</b></label>
+                                            <input type="file" id="banner" class="custom-file-input rounded"
+                                                name="banner" onchange="previewFile(this, 'photo_preview')"
+                                                accept="image/*">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4 mt-4 d-none col-sm-12" id="photo_preview_wrapper">
+                                        <div class="col"></div>
+                                        <div class="col-auto">
+                                            <img id="photo_preview" class="img-fluid rounded" />
+                                        </div>
+                                        <div class="col"></div>
+                                    </div>
+
+                                </div>
+                            </fieldset>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
 @endsection
+
+@push('js')
+<script>
+    $(document).ready(function() {
+        @if($course->banner != NULL)
+            previewPersistedFile("{{asset('storage/course-banner/'.$course->banner)}}", 'photo_preview');
+        @endif
+    });
+</script>
+@endpush
+
+@include('admin.Courses.components.script')

@@ -23,13 +23,18 @@
                 <li class="dropdown nav-item"><a class="nav-link" href="{{ route('home') }}"><i
                             class="feather icon-home"></i><span data-i18n="Dashboard">Inicio</span></a>
                 </li>
-
+                <li class="dropdown nav-item"><a class="nav-link" href="{{ route('shop.list') }}"><i
+                            class="feather icon-shopping-bag"></i><span data-i18n="Dashboard">Tienda</span></a>
+                </li>
+                <li class="dropdown nav-item"><a class="nav-link" href="{{ route('course.list-user') }}"><i
+                            class="feather icon-sidebar"></i><span data-i18n="Dashboard">Cursos</span></a>
+                </li>
                 @else
 
                 <li class="dropdown nav-item"><a class="nav-link" href="{{ route('home') }}"><i
                             class="feather icon-home"></i><span data-i18n="Dashboard">Inicio</span></a>
                 </li>
-                <li class="dropdown nav-item"><a class="nav-link" href="{{ route('users.list') }}"><i
+                <li class="dropdown nav-item"><a class="nav-link" href="{{ route('shop.list') }}"><i
                             class="feather icon-shopping-bag"></i><span data-i18n="Dashboard">Tienda</span></a>
                 </li>
                 <li class="dropdown nav-item"><a class="nav-link" href="{{ route('course.list') }}"><i

@@ -16,9 +16,9 @@ class CreateCourseTable extends Migration
         Schema::create('course', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longtext('description')->nullable();
-            $table->decimal('price')->nullable();
-            $table->string('banner')->nullable();
+            $table->longtext('description');
+            $table->decimal('price');
+            $table->string('banner');
             $table->enum('status', [0, 1])->default(0)->comment('0 - Inactivo, 1 - Activo');
             $table->timestamps();
         });

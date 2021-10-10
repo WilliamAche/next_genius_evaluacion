@@ -18,37 +18,48 @@ class CourseController extends Controller
         return view('admin.Courses.create');
     }
 
-    // permite la creacion del curso
-
+    /**
+     * Valida los campos y crea el curso
+    */
     public function store(Request $request){
 
         $fields = [
-            "email" => ['required'],
-            "whatsapp" => ['required'],
-            "issue" => ['required'],
+            "name" => ['required'],
+            "price" => ['required'],
             "description" => ['required'],
-            'status' => ['0'],
+            "status" => ['required'],
         ];
 
         $msj = [
-            'email.required' => 'El email es Requerido',
-            'whatsapp.required' => 'El whatsapp es Requerido',
-            'issue.required' => 'El asunto es Requerido',
-            'description.required' => 'La descripción es Requerido',
+            'name.required' => 'El titulo del curso es Requerido',
+            'price.required' => 'El precio del curso es Requerido',
+            'description.required' => 'La descripcion es Requerida',
+            'status.required' => 'El estado es Requerido',
         ];
 
         $this->validate($request, $fields, $msj);
 
         $course = Course::create($request->all());
-        $course->iduser = Auth::user()->id;
-        $course->save();
-        
 
+        //  guarda el banner
+        if($request->hasFile('banner')) {
+          
+          $file = $request->file('banner');
+          $name = $course->id.".".$file->getClientOriginalExtension();
+          $file->move(public_path('storage') . '/course-banner', $name);
+          $course->banner = $name;
+
+        } 
+
+        $course->save();
+
+        alert()->success('Curso creado');
         return redirect()->route('course.list')->with('msj-success', 'El Curso se creo Exitosamente');
     }
 
-    // permite editar el curso
-
+    /**
+    * lleva a la vista para editar el curso
+    */
     public function editAdmin($id){
 
         $course = Course::find($id);
@@ -57,129 +68,83 @@ class CourseController extends Controller
         ->with('course', $course);
     }
 
-    // permite actualizar el curso
 
+    /**
+     * Valida los campos y actualiza el curso
+    */
     public function updateAdmin(Request $request, $id){
 
         $course = Course::find($id);
 
         $fields = [
-            'status' => ['required'],
-            'note_admin' => ['required']
+            "name" => ['required'],
+            "price" => ['required'],
+            "description" => ['required'],
+            "status" => ['required'],
         ];
-        
+
         $msj = [
-            'status.required' => 'Es requerido el Estatus de la course',
-            'note_admin.required' => 'Es requerido Nota del admin',
+            'name.required' => 'El titulo del curso es Requerido',
+            'price.required' => 'El precio del curso es Requerido',
+            'description.required' => 'La descripcion es Requerida',
+            'status.required' => 'El estado es Requerido',
         ];
-        
+
         $this->validate($request, $fields, $msj);
 
         $course->update($request->all());
-        $course->note_admin = $request->note_admin;
+
+        //  guarda el banner
+        if($request->hasFile('banner')) {
+          
+          //  eliminar el banner anterior
+          $course->destroy(public_path('storage') . '/course-banner', $course->name);
+          $file = $request->file('banner');
+          $name = $course->id.".".$file->getClientOriginalExtension();
+          $file->move(public_path('storage') . '/course-banner', $name);
+          $course->banner = $name;
+
+        } 
         $course->save();
-        
-        $route = route('course.list');
-        return redirect($route)->with('msj-success', 'Curso '.$id.' Actualizado ');
+
+        alert()->success('Curso actualizado');
+        return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Actualizado ');
     }
 
-    // permite ver la lista de curso
-
+    /**
+    * lleva a la lista de los curso
+    */
     public function listAdmin(){
         
         $course = Course::all();
 
-        View::share('titleg', 'Historial de Tickets');
-        
         return view('admin.Courses.list')
         ->with('course', $course);
     }
 
-    // permite ver el curso
-
-    public function showAdmin($id){
+    /**
+    * permite eliminar el curso
+    */
+    public function destroy($id){
 
         $course = Course::find($id);
 
-        return view('admin.Courses.show')
-        ->with('course', $course);
+        $course->delete();
+
+        alert()->success('Curso eliminado');
+        return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Eliminado');
     }
 
 
-  // permite eliminar un curso
-    
-  public function destroy($id)
-  {
-    $course = Course::find($id);
-    
-    $course->delete();
-    
-    return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Eliminado');
-  }
+       /**
+    * lleva a la lista de los curso
+    */
+    public function listUser(){
+        
+        $course = Course::all();
 
-
-   // permite editar el curso
-
-   public function editUser($id){
-
-    $course = Course::find($id);
-
-    return view('tickets.componenteTickets.user.edit-user')
-    ->with('course', $course);
-}
-
-// permite actualizar el curso
-
-public function updateUser(Request $request, $id){
-
-    $course = Course::find($id);
-
-    $fields = [
-        "email" => ['required'],
-        "whatsapp" => ['required'],
-        "issue" => ['required'],
-        "description" => ['required'],
-        'status' => ['0'],
-    ];
-
-    $msj = [
-        'email.required' => 'El email es Requerido',
-        'whatsapp.required' => 'El whatsapp es Requerido',
-        'issue.required' => 'El asunto es Requerido',
-        'description.required' => 'La descripción es Requerido',
-    ];
-    
-    $this->validate($request, $fields, $msj);
-
-    $course->update($request->all());
-    $course->note_admin = $request->note_admin;
-    $course->save();
-    
-    $route = route('course.list-user');
-    return redirect($route)->with('msj-success', 'Curso '.$id.' Actualizado ');
-}
-
-// permite ver la lista de curso
-
-public function listUser(Request $request){
-
-    $course = Course::where('iduser', Auth::id())->get();
-
-    View::share('titleg', 'Historial de Tickets');
-
-    return view('tickets.componenteTickets.user.list-user')
-    ->with('course', $course);
-}
-
-// permite ver el curso
-
-public function showUser($id){
-
-    $course = Course::find($id);
-
-    return view('tickets.componenteTickets.user.show-user')
-    ->with('course', $course);
-}
-
+        return view('user.courses.list')
+        ->with('course', $course);
+    }
 
 }

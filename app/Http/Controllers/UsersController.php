@@ -15,7 +15,7 @@ class UsersController extends Controller
     {
         $users = User::all();
 
-        return view('pages.list.users')
+        return view('admin.users.list')
         ->with('users',$users);
     } 
 

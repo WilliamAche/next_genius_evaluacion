@@ -39,12 +39,20 @@ Route::group(['middleware' => ['auth']], function () {
     // ruta paa los cursos
      Route::prefix('course')->group(function(){
 
-        Route::get('edit/{id}','CourseController@editUser')->name('course.edit');
-        Route::patch('update/{id}','CourseController@updateUser')->name('course.update');
-        Route::get('list','CourseController@listUser')->name('course.list');
+        Route::get('list','CourseController@listUser')->name('course.list-user');
+
         Route::get('show/{id}','CourseController@showUser')->name('course.show');
 
     });
+
+      // ruta paa la tienda
+      Route::prefix('course')->group(function(){
+
+        Route::get('shop','ShopController@index')->name('shop.list');
+
+    });
+
+
 
     // Rutas para los usuarios con rol de administrador
     Route::group(['middleware' => ['role:1']], function () {

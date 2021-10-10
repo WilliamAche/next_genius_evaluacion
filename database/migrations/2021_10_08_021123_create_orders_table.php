@@ -15,6 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user');
+            $table->bigInteger('course')->unique();
+            $table->decimal('price')->nullable();
+            $table->enum('status', [0, 1, 2])->default(0)->comment('0 - En proceso, 1 - Completada, 2 - Cancelada');
             $table->timestamps();
         });
     }

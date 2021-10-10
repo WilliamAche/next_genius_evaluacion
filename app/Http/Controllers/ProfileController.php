@@ -62,9 +62,10 @@ class ProfileController extends Controller
 
         $user->save();
 
-        alert()->success('Perfil Actualizado','Tu Perfil se a actualizado existosamente');
+        alert()->success('Perfil Actualizado');
         return redirect()->route('profile')
         ->with('user',$user);
+
     }
    
     /**
@@ -88,7 +89,7 @@ class ProfileController extends Controller
    
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
 
-        alert()->success('Contraseña cambiada','Tu contraseña se a cambiado existosamente');
+        alert()->success('Contraseña cambiada');
         return view('home')->with('Toast Message', 'info');
    
     }

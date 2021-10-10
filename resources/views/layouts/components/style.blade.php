@@ -25,6 +25,8 @@
 <!-- BEGIN: Custom CSS-->
 <link rel="stylesheet" href="{{ asset('css/template/style.css') }}">
 
+<link rel="stylesheet" href="{{ asset('js/libs/jquery/jquery-confirm-v3.3.4/css/jquery-confirm.css') }}">
+
 <style>
     /* datatables */
     body.dark-layout .table thead tr th {
