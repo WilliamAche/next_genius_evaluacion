@@ -13,8 +13,8 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                            <form class="number-tab-steps wizard-circle" action="{{route('course.store')}}" method="POST">
-                                @csrf
+                        <form class="number-tab-steps wizard-circle" action="{{route('course.store')}}" method="POST">
+                             @csrf
                             <!-- Step 1 -->
                             <h6>Informacion</h6>
                             <fieldset>
@@ -63,20 +63,17 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Especifique la situacion</label>
-                                            <textarea type="text" rows="5" id="description" class="form-control"
-                                                name="description"></textarea>
+                                            <textarea type="text" rows="5" id="description" class="form-control" name="description"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label>Especifique la situacion</label>
-                                            <textarea type="text" rows="5" id="description" class="form-control"
-                                                name="description"></textarea>
+                                            <textarea type="text" rows="5" id="description" class="form-control" name="description"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Especifique la situacion</label>
-                                            <textarea type="text" rows="5" id="description" class="form-control"
-                                                name="description"></textarea>
+                                            <textarea type="text" rows="5" id="description" class="form-control" name="description"></textarea>
                                         </div>
                                     </div>
                                 </div>

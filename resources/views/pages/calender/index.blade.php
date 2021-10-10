@@ -101,21 +101,15 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary cal-add-event waves-effect waves-light" disabled>
                             Añadir nuevo evento</button>
-                        <button type="button" class="btn btn-primary d-none cal-submit-event waves-effect waves-light"
-                            disabled>submit</button>
-                        <button type="button" class="btn btn-flat-danger cancel-event waves-effect waves-light"
-                            data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-flat-danger remove-event d-none waves-effect waves-light"
-                            data-dismiss="modal">Remove</button>
+                        <button type="button" class="btn btn-primary d-none cal-submit-event waves-effect waves-light" disabled>submit</button>
+                        <button type="button" class="btn btn-flat-danger cancel-event waves-effect waves-light" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-flat-danger remove-event d-none waves-effect waves-light" data-dismiss="modal">Remove</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
-
-
-
 
 @push('js')
 <!-- BEGIN: Page Vendor JS-->

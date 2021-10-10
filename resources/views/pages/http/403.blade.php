@@ -39,8 +39,7 @@
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">
-            <div class="content-header row">
-            </div>
+            <div class="content-header row"></div>
             <div class="content-body">
                 <!-- maintenance -->
                 <section class="row flexbox-container">
@@ -60,7 +59,6 @@
                     </div>
                 </section>
                 <!-- maintenance end -->
-
             </div>
         </div>
     </div>

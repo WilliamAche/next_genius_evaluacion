@@ -1,5 +1,4 @@
 <div class="row">
-
     <div class="col-md-6 col-sm-12">
         <div class="card">
             <div class="card-header d-flex justify-content-center">
@@ -19,8 +18,7 @@
                                 <div class="carousel-caption">
                                     <h3>First Slide Label</h3>
                                     <p>Donut jujubes I love topping I love sweet. Jujubes I love brownie gummi bears I
-                                        love donut sweet
-                                        chocolate. Tart chocolate marshmallow.Tart carrot cake muffin.</p>
+                                        love donut sweet chocolate. Tart chocolate marshmallow.Tart carrot cake muffin.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -29,8 +27,7 @@
                                 <div class="carousel-caption">
                                     <h3>Second Slide Label</h3>
                                     <p>Tart macaroon marzipan I love soufflé apple pie wafer. Chocolate bar jelly
-                                        caramels jujubes
-                                        chocolate cake gummies. Cupcake cake I love cake danish carrot cake.</p>
+                                        caramels jujubes chocolate cake gummies. Cupcake cake I love cake danish carrot cake.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -38,18 +35,15 @@
                                 <div class="carousel-caption">
                                     <h3>Third Slide Label</h3>
                                     <p>Pudding sweet pie gummies. Chocolate bar sweet tiramisu cheesecake chocolate
-                                        cotton candy pastry
-                                        muffin. Marshmallow cake powder icing.</p>
+                                        cotton candy pastry muffin. Marshmallow cake powder icing.</p>
                                 </div>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carousel-example-caption" role="button"
-                            data-slide="prev">
+                        <a class="carousel-control-prev" href="#carousel-example-caption" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carousel-example-caption" role="button"
-                            data-slide="next">
+                        <a class="carousel-control-next" href="#carousel-example-caption" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -78,8 +72,7 @@
                                 <div class="carousel-caption">
                                     <h3>First Slide Label</h3>
                                     <p>Donut jujubes I love topping I love sweet. Jujubes I love brownie gummi bears I
-                                        love donut sweet
-                                        chocolate. Tart chocolate marshmallow.Tart carrot cake muffin.</p>
+                                    love donut sweet chocolate. Tart chocolate marshmallow.Tart carrot cake muffin.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -88,8 +81,7 @@
                                 <div class="carousel-caption">
                                     <h3>Second Slide Label</h3>
                                     <p>Tart macaroon marzipan I love soufflé apple pie wafer. Chocolate bar jelly
-                                        caramels jujubes
-                                        chocolate cake gummies. Cupcake cake I love cake danish carrot cake.</p>
+                                    caramels jujubes chocolate cake gummies. Cupcake cake I love cake danish carrot cake.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -97,18 +89,15 @@
                                 <div class="carousel-caption">
                                     <h3>Third Slide Label</h3>
                                     <p>Pudding sweet pie gummies. Chocolate bar sweet tiramisu cheesecake chocolate
-                                        cotton candy pastry
-                                        muffin. Marshmallow cake powder icing.</p>
+                                    cotton candy pastry muffin. Marshmallow cake powder icing.</p>
                                 </div>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carousel-example-caption" role="button"
-                            data-slide="prev">
+                        <a class="carousel-control-prev" href="#carousel-example-caption" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carousel-example-caption" role="button"
-                            data-slide="next">
+                        <a class="carousel-control-next" href="#carousel-example-caption" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -117,5 +106,4 @@
             </div>
         </div>
     </div>
-
 </div>

@@ -3,7 +3,7 @@
 @section('content')
 <section class="row flexbox-container">
     <div class="col-xl-7 col-md-9 col-10 d-flex justify-content-center px-0">
-    <div class="card bg-authentication rounded-0 mb-0">
+        <div class="card bg-authentication rounded-0 mb-0">
             <div class="row m-0">
                 <div class="col-lg-6 d-lg-block d-none text-center align-self-center">
                     <img src="{{ asset('img/template/pages/forgot-password.png') }}" alt="branding logo">
@@ -19,10 +19,10 @@
                         <div class="card-content">
                             <div class="card-body">
                                 @if (session('status'))
-                                <div class="alert alert-success" role="alert">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
                                 <form method="POST" action="{{ route('password.email') }}">
                                     @csrf
                                     <div class="form-label-group">
@@ -47,8 +47,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div>   
 </section>
 
 

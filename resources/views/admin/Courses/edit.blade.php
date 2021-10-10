@@ -76,8 +76,7 @@
                                     </div>
                                     <div class="col-12">
                                         <button type="submit"
-                                            class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Actualizar
-                                            Ticket</button>
+                                            class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Actualizar Ticket</button>
                                     </div>
                                 </div>
                             </div>

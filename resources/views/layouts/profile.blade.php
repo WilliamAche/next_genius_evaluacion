@@ -9,8 +9,6 @@
     data-menu="horizontal-menu" data-col="2-columns" data-layout="dark-layout">
 
     @include('layouts.components.navbar')
-    
-
 
     @include('sweetalert::alert')
 
@@ -31,13 +29,12 @@
 
     <!-- BEGIN: Footer-->
     <footer class="footer footer-static footer-dark navbar-shadow">
-        <p class="clearfix blue-grey lighten-2 mb-0"><span
-                class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2021<a
-                    class="text-bold-800 grey darken-2" href="#">Next Genius,</a>All rights Reserved</span><span
-                class="float-md-right d-none d-md-block">Hecho a mano y con<i
-                    class="feather icon-heart pink"></i></span>
-            <button class="btn btn-primary btn-icon scroll-top" type="button"><i
-                    class="feather icon-arrow-up"></i></button>
+        <p class="clearfix blue-grey lighten-2 mb-0">
+            <span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2021
+                <a class="text-bold-800 grey darken-2" href="#">Next Genius,</a>All rights Reserved
+            </span>
+            <span class="float-md-right d-none d-md-block">Hecho a mano y con<i class="feather icon-heart pink"></i></span>
+            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="feather icon-arrow-up"></i></button>
         </p>
     </footer>
 

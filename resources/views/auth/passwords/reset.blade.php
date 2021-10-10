@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="row flexbox-container">
-        <div class="col-xl-7 col-10 d-flex justify-content-center">
+    <div class="col-xl-7 col-10 d-flex justify-content-center">
         <div class="card bg-authentication rounded-0 mb-0 w-100">
             <div class="row m-0">
                 <div class="col-lg-6 d-lg-block d-none text-center align-self-center p-0">
@@ -20,26 +20,25 @@
                             <div class="card-body pt-1">
                                 <form method="POST" action="{{ route('password.update') }}">
                                     @csrf
-
-                        <input type="hidden" name="token" value="{{ $token }}">
+                                    <input type="hidden" name="token" value="{{ $token }}">
 
                                     <fieldset class="form-label-group">
                                         <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" autocomplete="email" autofocus placeholder="Correo electronico" readonly required>
                                         @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                         <label for="user-email">Correo electronico</label>
                                     </fieldset>
 
                                     <fieldset class="form-label-group">
                                         <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" autocomplete="new-password" placeholder="Contraseña" required>
                                         @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                         <label for="user-password">Contraseña</label>
                                     </fieldset>
 
