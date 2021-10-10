@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// Models
 use App\Models\User;
+
+// Illuminate
+use Illuminate\Support\Facades\Log;
 
 class UsersController extends Controller
 {
@@ -13,10 +16,17 @@ class UsersController extends Controller
     */
     public function index()
     {
-        $users = User::all();
+        try{
 
-        return view('admin.users.list')
-        ->with('users',$users);
+            $users = User::all();
+
+            return view('admin.users.list')
+            ->with('users',$users);
+
+        } catch (\Throwable $th) {
+            Log::error('UsersController - index -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     } 
 
 }

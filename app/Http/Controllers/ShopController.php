@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// Models
 use App\Models\Course;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
+
+// Illuminate
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
 {
@@ -15,7 +17,14 @@ class ShopController extends Controller
     */
     public function index(){
 
-        return view('pages.shop.index');
+        try{
+
+            return view('pages.shop.index');
+
+        } catch (\Throwable $th) {
+            Log::error('ShopController - index -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 
     /**

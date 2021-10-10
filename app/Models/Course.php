@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+// Illuminate
 use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model

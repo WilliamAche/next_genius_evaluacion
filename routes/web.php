@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// Illuminate
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,18 +38,16 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     // ruta paa los cursos
-     Route::prefix('course')->group(function(){
+     Route::prefix('ssss')->group(function(){
 
-        Route::get('list','CourseController@listUser')->name('course.list-user');
-
-        Route::get('show/{id}','CourseController@showUser')->name('course.show');
+        Route::get('list','CourseController@listUser')->name('course.list.user');
 
     });
 
       // ruta paa la tienda
-      Route::prefix('course')->group(function(){
+      Route::prefix('shop')->group(function(){
 
-        Route::get('shop','ShopController@index')->name('shop.list');
+        Route::get('/','ShopController@index')->name('shop.list');
 
     });
 

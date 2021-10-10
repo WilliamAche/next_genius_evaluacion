@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+// Other
 use Closure;
 
 class CheckRole

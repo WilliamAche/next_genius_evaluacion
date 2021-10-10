@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// Illuminate
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,14 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        try{
+
+            $this->middleware('auth');
+
+        } catch (\Throwable $th) {
+            Log::error('HomeController - __construct -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 
     /**
@@ -23,6 +31,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        try{
+
+            return view('home');
+        
+        } catch (\Throwable $th) {
+            Log::error('HomeController - index -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 }
