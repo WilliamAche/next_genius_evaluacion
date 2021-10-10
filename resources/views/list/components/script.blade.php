@@ -13,17 +13,41 @@
     <!-- BEGIN: Page JS-->
     <script src="{{ asset('js/template/scripts/datatables/datatable.js') }}"></script>
 
-    {{-- <script>
-        $('.myTable').DataTable({
-            responsive: true,
-            order: [
-                [0, "asc"]
-            ],
-            lengthMenu: [
-                [10, 25, 50, -1],
-                [10, 25, 50, "Todo"]
-            ],
-            dom: 'Bfrtip'
-        })
-    </script> --}}
+{{-- <script>
+    $('.myTable').DataTable({
+        responsive: true,
+        order: [
+            [0, "asc"]
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "Todo"]
+        ],
+
+        dom: 'Bfrtip'
+    })
+</script> --}}
+
+<script>
+    $('.delete').confirm({
+        title: 'Confirmar!',
+        content: 'Eliminar este registro?',
+        theme: 'supervan',
+        buttons: {
+            confirmar: {
+            btnClass: 'btn-danger',
+                action: function () {
+                        $('.delete').addClass('is-loading').addClass('disabled');
+                        document.getElementById('delete').submit();
+                    }
+            },
+            cancel: {
+                btnClass: 'btn-outline-secondary',
+                    action: function () {
+
+                }
+            }
+        }
+    });
+</script>
 @endpush

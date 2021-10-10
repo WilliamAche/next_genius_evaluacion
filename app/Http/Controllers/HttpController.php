@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+// Illuminate
+use Illuminate\Support\Facades\Log;
+
 class HttpController extends Controller
 {
     /**
@@ -11,6 +14,13 @@ class HttpController extends Controller
      */
     public function http403()
     {
-        return view('pages.http.403');
+        try{
+
+            return view('pages.http.403');
+
+        } catch (\Throwable $th) {
+            Log::error('HttpController - http403 -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     } 
 }

@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+
+// Providers
 use App\Providers\RouteServiceProvider;
+
+// Illuminate
+use Illuminate\Support\Facades\Log;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller
@@ -35,8 +40,16 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('signed')->only('verify');
-        $this->middleware('throttle:6,1')->only('verify', 'resend');
+    
+        try {
+
+            $this->middleware('auth');
+            $this->middleware('signed')->only('verify');
+            $this->middleware('throttle:6,1')->only('verify', 'resend');
+
+        } catch (\Throwable $th) {
+            Log::error('VerificationController - __construct -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 }

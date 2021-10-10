@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// Illuminate
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,14 +38,20 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     // ruta paa los cursos
-     Route::prefix('course')->group(function(){
+     Route::prefix('ssss')->group(function(){
 
-        Route::get('edit/{id}','CourseController@editUser')->name('course.edit');
-        Route::patch('update/{id}','CourseController@updateUser')->name('course.update');
-        Route::get('list','CourseController@listUser')->name('course.list');
-        Route::get('show/{id}','CourseController@showUser')->name('course.show');
+        Route::get('list','CourseController@listUser')->name('course.list.user');
 
     });
+
+      // ruta paa la tienda
+      Route::prefix('shop')->group(function(){
+
+        Route::get('/','ShopController@index')->name('shop.list');
+
+    });
+
+
 
     // Rutas para los usuarios con rol de administrador
     Route::group(['middleware' => ['role:1']], function () {

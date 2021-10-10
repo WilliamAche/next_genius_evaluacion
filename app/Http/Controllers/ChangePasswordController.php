@@ -2,13 +2,16 @@
    
 namespace App\Http\Controllers;
    
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-
+// Models
 use App\Models\User;
+
+// Rules
 use App\Rules\MatchOldPassword;
 
-use RealRashid\SweetAlert\Facades\Alert;
+// Illuminate
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
   
 class ChangePasswordController extends Controller
 {
@@ -29,7 +32,14 @@ class ChangePasswordController extends Controller
      */
     public function index()
     {
-        return view('auth.passwords.change');
+        try {
+
+            return view('auth.passwords.change');
+
+        } catch (\Throwable $th) {
+            Log::error('ChangePasswordController - index -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     } 
    
     /**
@@ -39,16 +49,22 @@ class ChangePasswordController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'current_password' => ['required', new MatchOldPassword],
-            'new_password' => ['required'],
-            'new_confirm_password' => ['same:new_password'],
-        ]);
-   
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        try {
 
-        alert()->success('Contraseña cambiada','Tu contraseña se a cambiado existosamente');
-        return view('home')->with('Toast Message', 'info');
-   
+            $request->validate([
+                'current_password' => ['required', new MatchOldPassword],
+                'new_password' => ['required'],
+                'new_confirm_password' => ['same:new_password'],
+            ]);
+        
+            User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+
+            alert()->success('Contraseña cambiada','Tu contraseña se a cambiado existosamente');
+            return view('home')->with('Toast Message', 'info');
+
+        } catch (\Throwable $th) {
+            Log::error('ChangePasswordController - store -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 }

@@ -19,4 +19,6 @@
 <script src="{{ asset('js/template/scripts/pages/dashboard-analytics.js') }}"></script>
 
 <!-- BEGIN: Custom JS-->
+<script src="{{ asset('js/libs/jquery/jquery-confirm-v3.3.4/js/jquery-confirm.js') }}"></script>
+
 @stack('js')

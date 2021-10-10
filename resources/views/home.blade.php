@@ -9,7 +9,5 @@
 
     @include('pages.calender.index')
 
-    @include('pages.list.bills')
-
 </section>
 @endsection

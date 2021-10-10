@@ -2,184 +2,203 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// Models
 use App\Models\Course;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
+
+// Illuminate
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CourseController extends Controller
 {
-    
+
     /**
     * lleva a la vista para crear el curso
     */
     public function create(){
 
-        return view('admin.Courses.create');
+        try {
+
+            return view('admin.Courses.create');
+
+        } catch (\Throwable $th) {
+            Log::error('CourseController - create -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 
-    // permite la creacion del curso
-
+    /**
+     * Valida los campos y crea el curso
+    */
     public function store(Request $request){
 
+        try {
+
         $fields = [
-            "email" => ['required'],
-            "whatsapp" => ['required'],
-            "issue" => ['required'],
+            "name" => ['required'],
+            "price" => ['required'],
             "description" => ['required'],
-            'status' => ['0'],
+            "status" => ['required'],
         ];
 
         $msj = [
-            'email.required' => 'El email es Requerido',
-            'whatsapp.required' => 'El whatsapp es Requerido',
-            'issue.required' => 'El asunto es Requerido',
-            'description.required' => 'La descripción es Requerido',
+            'name.required' => 'El titulo del curso es Requerido',
+            'price.required' => 'El precio del curso es Requerido',
+            'description.required' => 'La descripcion es Requerida',
+            'status.required' => 'El estado es Requerido',
         ];
 
         $this->validate($request, $fields, $msj);
 
         $course = Course::create($request->all());
-        $course->iduser = Auth::user()->id;
-        $course->save();
-        
 
+        //  guarda el banner
+        if($request->hasFile('banner')) {
+          
+          $file = $request->file('banner');
+          $name = $course->id.".".$file->getClientOriginalExtension();
+          $file->move(public_path('storage') . '/course-banner', $name);
+          $course->banner = $name;
+
+        } 
+
+        $course->save();
+
+        alert()->success('Curso creado');
         return redirect()->route('course.list')->with('msj-success', 'El Curso se creo Exitosamente');
+
+        } catch (\Throwable $th) {
+            Log::error('CourseController - store -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 
-    // permite editar el curso
-
+    /**
+    * lleva a la vista para editar el curso
+    */
     public function editAdmin($id){
 
-        $course = Course::find($id);
+        try {
 
-        return view('admin.Courses.edit')
-        ->with('course', $course);
+            $course = Course::find($id);
+
+            return view('admin.Courses.edit')
+            ->with('course', $course);
+
+        } catch (\Throwable $th) {
+            Log::error('CourseController - editAdmin -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 
-    // permite actualizar el curso
 
+    /**
+     * Valida los campos y actualiza el curso
+    */
     public function updateAdmin(Request $request, $id){
+
+        try {
 
         $course = Course::find($id);
 
         $fields = [
-            'status' => ['required'],
-            'note_admin' => ['required']
+            "name" => ['required'],
+            "price" => ['required'],
+            "description" => ['required'],
+            "status" => ['required'],
         ];
-        
+
         $msj = [
-            'status.required' => 'Es requerido el Estatus de la course',
-            'note_admin.required' => 'Es requerido Nota del admin',
+            'name.required' => 'El titulo del curso es Requerido',
+            'price.required' => 'El precio del curso es Requerido',
+            'description.required' => 'La descripcion es Requerida',
+            'status.required' => 'El estado es Requerido',
         ];
-        
+
         $this->validate($request, $fields, $msj);
 
         $course->update($request->all());
-        $course->note_admin = $request->note_admin;
+
+        //  guarda el banner
+        if($request->hasFile('banner')) {
+          
+          //  eliminar el banner anterior
+          $course->destroy(public_path('storage') . '/course-banner', $course->name);
+          $file = $request->file('banner');
+          $name = $course->id.".".$file->getClientOriginalExtension();
+          $file->move(public_path('storage') . '/course-banner', $name);
+          $course->banner = $name;
+
+        } 
         $course->save();
-        
-        $route = route('course.list');
-        return redirect($route)->with('msj-success', 'Curso '.$id.' Actualizado ');
+
+        alert()->success('Curso actualizado');
+        return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Actualizado ');
+
+        } catch (\Throwable $th) {
+            Log::error('CourseController - updateAdmin -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 
-    // permite ver la lista de curso
-
+    /**
+    * lleva a la lista de los curso
+    */
     public function listAdmin(){
         
-        $course = Course::all();
+        try {
 
-        View::share('titleg', 'Historial de Tickets');
-        
-        return view('admin.Courses.list')
-        ->with('course', $course);
+            $course = Course::all();
+
+            return view('admin.Courses.list')
+            ->with('course', $course);
+
+        } catch (\Throwable $th) {
+            Log::error('CourseController - listAdmin -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 
-    // permite ver el curso
+    /**
+    * permite eliminar el curso
+    */
+    public function destroy($id){
 
-    public function showAdmin($id){
+        try {
 
         $course = Course::find($id);
 
-        return view('admin.Courses.show')
-        ->with('course', $course);
+        $course->delete();
+
+        alert()->success('Curso eliminado');
+        return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Eliminado');
+
+        } catch (\Throwable $th) {
+            Log::error('CourseController - destroy -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 
 
-  // permite eliminar un curso
-    
-  public function destroy($id)
-  {
-    $course = Course::find($id);
-    
-    $course->delete();
-    
-    return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Eliminado');
-  }
 
+    // USERS
 
-   // permite editar el curso
+    /**
+    * lleva a la lista de los curso
+    */
+    public function listUser(){
+        
+        try {
 
-   public function editUser($id){
+            $course = Course::all();
 
-    $course = Course::find($id);
+            return view('user.courses.list')
+            ->with('course', $course);
 
-    return view('tickets.componenteTickets.user.edit-user')
-    ->with('course', $course);
-}
-
-// permite actualizar el curso
-
-public function updateUser(Request $request, $id){
-
-    $course = Course::find($id);
-
-    $fields = [
-        "email" => ['required'],
-        "whatsapp" => ['required'],
-        "issue" => ['required'],
-        "description" => ['required'],
-        'status' => ['0'],
-    ];
-
-    $msj = [
-        'email.required' => 'El email es Requerido',
-        'whatsapp.required' => 'El whatsapp es Requerido',
-        'issue.required' => 'El asunto es Requerido',
-        'description.required' => 'La descripción es Requerido',
-    ];
-    
-    $this->validate($request, $fields, $msj);
-
-    $course->update($request->all());
-    $course->note_admin = $request->note_admin;
-    $course->save();
-    
-    $route = route('course.list-user');
-    return redirect($route)->with('msj-success', 'Curso '.$id.' Actualizado ');
-}
-
-// permite ver la lista de curso
-
-public function listUser(Request $request){
-
-    $course = Course::where('iduser', Auth::id())->get();
-
-    View::share('titleg', 'Historial de Tickets');
-
-    return view('tickets.componenteTickets.user.list-user')
-    ->with('course', $course);
-}
-
-// permite ver el curso
-
-public function showUser($id){
-
-    $course = Course::find($id);
-
-    return view('tickets.componenteTickets.user.show-user')
-    ->with('course', $course);
-}
-
+        } catch (\Throwable $th) {
+            Log::error('CourseController - listUser -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
+    }
 
 }

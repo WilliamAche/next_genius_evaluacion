@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+
+// Providers
 use App\Providers\RouteServiceProvider;
+
+// Illuminate
+use Illuminate\Support\Facades\Log;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -35,6 +40,13 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        try {
+
+            $this->middleware('guest')->except('logout');
+
+        } catch (\Throwable $th) {
+            Log::error('LoginController - __construct -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 }

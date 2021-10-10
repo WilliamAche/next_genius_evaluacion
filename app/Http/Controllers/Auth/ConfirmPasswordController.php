@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+
+// Providers
 use App\Providers\RouteServiceProvider;
+
+// Illuminate
+use Illuminate\Support\Facades\Log;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
 
 class ConfirmPasswordController extends Controller
@@ -35,6 +40,16 @@ class ConfirmPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        try {
+
+            $this->middleware('auth');
+    
+        } catch (\Throwable $th) {
+            Log::error('ConfirmPasswordController - __construct -> Error: '.$th);
+            abort(403, "Ocurrio un error, contacte con el administrador");
+        }
     }
 }
+
+
+
