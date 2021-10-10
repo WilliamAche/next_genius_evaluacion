@@ -28,20 +28,19 @@
                                     <div class="form-label-group">
                                         <input type="email" id="inputEmail" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                         @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                         <label for="inputEmail">Email</label>
                                     </div>
-                                <div class="float-md-left d-block mb-1">
-                                    <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block px-75">Iniciar sesion</a>
-                                </div>
-                                <div class="float-md-right d-block mb-1">
-                                <button type="submit" class="btn btn-primary btn-block px-75">Recuperar contraseña</button>
-                                </div>
-                            </form>
-
+                                    <div class="float-md-left d-block mb-1">
+                                        <a href="{{ route('login') }}" class="btn btn-outline-primary btn-block px-75">Iniciar sesion</a>
+                                    </div>
+                                    <div class="float-md-right d-block mb-1">
+                                        <button type="submit" class="btn btn-primary btn-block px-75">Recuperar contraseña</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
