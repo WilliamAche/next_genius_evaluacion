@@ -99,7 +99,7 @@
                         </fieldset>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary cal-add-event waves-effect waves-light" disabled>
+                        <button type="button" class="btn btn-outline-primary cal-add-event waves-effect waves-light" disabled>
                             Añadir nuevo evento</button>
                         <button type="button" class="btn btn-primary d-none cal-submit-event waves-effect waves-light" disabled>submit</button>
                         <button type="button" class="btn btn-flat-danger cancel-event waves-effect waves-light" data-dismiss="modal">Cancelar</button>

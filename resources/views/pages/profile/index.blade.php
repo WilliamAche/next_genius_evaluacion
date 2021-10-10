@@ -80,7 +80,7 @@
                             @method('PATCH')
 
                             <div class="card-body">
-                                <h6 class="mb-0">Nombre de usuario:</h6>
+                                <label class="mb-0">Nombre de usuario:</label>
                                 <div class="form-group">
                                     <div class="controls">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-1">
-                                    <h6 class="mb-0">Correo Electronico:</h6>
+                                    <label class="mb-0">Correo Electronico:</label>
                                     <div class="form-group">
                                         <div class="controls">
                                             <input type="email" class="form-control @error('email') is-invalid @enderror"
@@ -107,7 +107,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-1">
-                                    <h6 class="mb-0">Foto de Perfil:</h6>
+                                    <label class="mb-0">Foto de Perfil:</label>
                                     <div class="media">
                                         <div class="custom-file">
                                             <label class="custom-file-label" for="photo"><b>(Solo JPG o PNG.Tamaño máximo de 1mb)</b></label>
@@ -129,7 +129,7 @@
                                 </div>
 
                                 <div class="mt-1">
-                                    <h6 class="mb-0">Foto del banner:</h6>
+                                    <label class="mb-0">Foto del banner:</label>
                                     <div class="media">
                                         <div class="custom-file">
                                             <label class="custom-file-label" for="banner"><b>(Solo JPG o PNG.Tamaño máximo de 1mb)</b></label>
@@ -150,7 +150,7 @@
                                 </div>
 
                                 <div class="row justify-content-center">
-                                    <button type="submit" class="btn btn-primary mt-1">
+                                    <button type="submit" class="btn btn-outline-primary mt-1">
                                         Actualiza información
                                     </button>
                                 </div>
@@ -169,16 +169,6 @@
 
 @push('js')
 <script>
-    // $(document).ready(function() {
-    //     @if($user->photo != NULL)
-    //         previewPersistedFile("{{asset('storage/photo-profile/'.$user->photo)}}", 'photo_preview');
-    //     @endif
-
-    //     @if($user->banner != NULL)
-    //         previewPersistedFile("{{asset('storage/photo-banner/'.$user->banner)}}", 'banner_preview');
-    //     @endif
-    // });
-    
     function previewFile(input, preview_id) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

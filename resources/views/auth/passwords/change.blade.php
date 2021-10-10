@@ -36,7 +36,7 @@
                         </div>
    
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-outline-primary">
                                 Actualiza contraseña
                             </button>
                         </div>

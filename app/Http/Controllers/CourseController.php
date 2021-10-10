@@ -169,13 +169,13 @@ class CourseController extends Controller
         $course = Course::find($id);
 
         $course->delete();
-
+        
         alert()->success('Curso eliminado');
         return redirect()->route('course.list')->with('msj-success', 'Curso '.$id.' Eliminado');
 
         } catch (\Throwable $th) {
             Log::error('CourseController - destroy -> Error: '.$th);
-            abort(403, "Ocurrio un error, contacte con el administrador");
+            abort(500, "Ocurrio un error, contacte con el administrador");
         }
     }
 
