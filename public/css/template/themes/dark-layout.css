@@ -2,7 +2,8 @@
         DARK LAYOUT
 =========================================================*/
 body.dark-layout {
-  background-color : #262C49;
+  /* background-color : #262C49; */
+  background-color : #11131b;
   /********* UI ELEMENTS *********/
   /********* COMPONENTS *********/
   /********** FORMS **********/
@@ -51,11 +52,13 @@ body.dark-layout .text-dark {
   color : #B8C2CC !important;
 }
 body.dark-layout .header-navbar-shadow {
-  background : -webkit-linear-gradient(top, rgba(44, 48, 60, 0.9) 44%, rgba(44, 48, 60, 0.43) 73%, rgba(44, 48, 60, 0));
-  background :         linear-gradient(180deg, rgba(44, 48, 60, 0.9) 44%, rgba(44, 48, 60, 0.43) 73%, rgba(44, 48, 60, 0));
+  /* background : -webkit-linear-gradient(top, rgba(44, 48, 60, 0.9) 44%, rgba(44, 48, 60, 0.43) 73%, rgba(44, 48, 60, 0));
+  background :         linear-gradient(180deg, rgba(44, 48, 60, 0.9) 44%, rgba(44, 48, 60, 0.43) 73%, rgba(44, 48, 60, 0)); */
+  background : -webkit-linear-gradient(top, rgba(21, 23, 30, 0.9) 44%, rgba(12, 14, 24, 0.43) 73%, rgba(3, 4, 5, 0));
+  background :         linear-gradient(180deg, rgba(11, 13, 19, 0.9) 44%, rgba(10, 11, 15, 0.43) 73%, rgba(20, 23, 32, 0));
 }
 body.dark-layout .header-navbar {
-  background-color : #10163A;
+  background-color : #070913;
 }
 body.dark-layout .header-navbar .navbar-container .nav .nav-item .nav-link {
   color : #C2C6DC;

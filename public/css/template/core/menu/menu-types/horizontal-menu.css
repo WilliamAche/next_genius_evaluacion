@@ -40,33 +40,40 @@
 }
 
 .horizontal-menu.dark-layout .horizontal-menu-wrapper {
-  background : -webkit-linear-gradient(top, rgba(37, 43, 71, 0.76) 44%, rgba(56, 53, 53, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
-  background :         linear-gradient(to bottom, rgba(37, 43, 71, 0.76) 44%, rgba(56, 53, 53, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
+  /* background : -webkit-linear-gradient(top, rgba(37, 43, 71, 0.76) 44%, rgba(56, 53, 53, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
+  background :         linear-gradient(to bottom, rgba(37, 43, 71, 0.76) 44%, rgba(56, 53, 53, 0.46) 73%, rgba(255, 255, 255, 0) 100%); */
+  background : -webkit-linear-gradient(top, #080a13c2 44%, #1b111175 73%, #ffffff00 100%);
+  background :         linear-gradient(to bottom, #090b13c2 44%, #0f090975 73%, #ffffff00 100%);
 }
 .horizontal-menu.dark-layout .horizontal-menu-wrapper .header-navbar {
   background : #10163A !important;
 }
 .horizontal-menu.dark-layout .horizontal-menu-wrapper .header-navbar.navbar-horizontal ul#main-menu-navigation > li:hover:not(.active) > a {
-  background : #262C49;
+  /* background : #262C49; */
+  background-color : #0b0d16;
 }
 
 .horizontal-menu.semi-dark-layout .header-navbar {
-  background : -webkit-linear-gradient(top, rgba(37, 43, 71, 0.76) 44%, rgba(56, 53, 53, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
-  background :         linear-gradient(to bottom, rgba(37, 43, 71, 0.76) 44%, rgba(56, 53, 53, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
+  /* background : -webkit-linear-gradient(top, rgba(37, 43, 71, 0.76) 44%, rgba(56, 53, 53, 0.46) 73%, rgba(255, 255, 255, 0) 100%);
+  background :         linear-gradient(to bottom, rgba(37, 43, 71, 0.76) 44%, rgba(56, 53, 53, 0.46) 73%, rgba(255, 255, 255, 0) 100%); */
+  background : -webkit-linear-gradient(top, #080a13c2 44%, #1b111175 73%, #ffffff00 100%);
+  background :         linear-gradient(to bottom, #090b13c2 44%, #0f090975 73%, #ffffff00 100%);
 }
 
 .horizontal-menu.semi-dark-layout .horizontal-menu-wrapper .header-navbar {
   background : #10163A !important;
 }
 .horizontal-menu.semi-dark-layout .horizontal-menu-wrapper .header-navbar.navbar-horizontal ul#main-menu-navigation > li:hover > a {
-  background : #262C49;
+  /* background : #262C49; */
+  background-color : #0b0d16;
 }
 .horizontal-menu.semi-dark-layout .horizontal-menu-wrapper .header-navbar i, .horizontal-menu.semi-dark-layout .horizontal-menu-wrapper .header-navbar span, .horizontal-menu.semi-dark-layout .horizontal-menu-wrapper .header-navbar .nav-link {
   color : #C2C6DC;
 }
 
 .horizontal-menu.semi-dark-layout .horizontal-menu-wrapper .dropdown-menu {
-  background-color : #262C49;
+  /* background-color : #262C49; */
+  background-color : #0b0d16;
 }
 
 .horizontal-menu.navbar-sticky .app-content {
@@ -339,7 +346,9 @@
     display : none;
   }
   body.horizontal-layout .header-navbar {
-    background : #10163A;
+    /* background : #10163A; */
+    background : #050505;
+
   }
   body.horizontal-layout .content .content-wrapper {
     margin-top : 5rem;
